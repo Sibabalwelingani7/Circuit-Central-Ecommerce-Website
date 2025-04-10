@@ -2,11 +2,11 @@
 Circuit Central is an e-commerce platform specializing in high-quality second-hand computers. This platform enables users to browse, purchase, and manage orders efficiently.
 
 # :flying_disc: Technologies Used
-PHP (Backend)
-XAMPP (Development Environment)
-HTML, CSS (Frontend Structure & Styling)
-JavaScript (Interactive Features)
-XAMPP (Database Management)
+* PHP (Backend)
+* XAMPP (Development Environment)
+* HTML, CSS (Frontend Structure & Styling)
+* JavaScript (Interactive Features)
+* XAMPP (Database Management)
 
 # :bulb: KEY FEATURES
 This e-commerce website implements the following key features:
