@@ -14,14 +14,14 @@ This e-commerce website implements the following key features:
 * **User Login and Registration:** Secure user registration and login functionality.
 * **Admin Panel:** manages users, products, and orders.
 * **Shopping Cart and Order Process:** A functional shopping cart allowing users to add, modify, and checkout with their selected items.
-* **Payment System Integration:**Secure Checkout Process
+* **Payment System Integration:** Secure Checkout Process
 * **My Account Page:** 
-* for Order History & Details
-* Product Listings with Detailed Descriptions
-* Promotions & Discounts Page
-* Responsive UI for Various Devices
-* Secure Payment Integration
-* Search & Filter Functionality
+* * for Order History & Details
+* * Product Listings with Detailed Descriptions
+* * Promotions & Discounts Page
+* * Responsive UI for Various Devices
+* * Secure Payment Integration
+* * Search & Filter Functionality
 * **Overall System Integration (Front-end and Back-end):** Seamless communication and data flow between the user interface and the server-side logic.
 
 ## Setup Instructions
