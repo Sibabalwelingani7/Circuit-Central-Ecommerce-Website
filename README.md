@@ -92,7 +92,7 @@ Open a browser and visit: http://localhost/CircuitCentral
 # Emails
 * sibabalwelingani17@gmail.com
 * jonathanmicah23@gmail.com 
-* jonathanmicah23@gmail.com.
+* williamoctober210@gmail.com
 # Git usernames
 * Sibabalwelingani7
 * xolani-tech
