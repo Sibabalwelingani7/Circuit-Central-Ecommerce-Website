@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuit Central | Your Tech Hub</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for the Inter font and smooth scrolling */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Custom button styles for hover effects */
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .btn-secondary {
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        /* Custom background for hero section */
+        #hero {
+            background-image: url('https://placehold.co/1920x800/2A2A2A/FFFFFF?text=Modern+Tech+Background'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+        }
+        /* Custom background for banner section */
+        #banner {
+            background-image: url('https://placehold.co/1920x400/1A1A1A/FFFFFF?text=Repair+Services+Banner'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+        }
+        /* Custom background for small banners */
+        #sm-banner .banner-box {
+            background-image: url('https://placehold.co/900x400/3A3A3A/FFFFFF?text=Crazy+Deals'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        #sm-banner .banner-box2 {
+            background-image: url('https://placehold.co/900x400/4A4A4A/FFFFFF?text=Upcoming+Season'); /* Placeholder image */
+        }
+        /* Custom background for promo page hero */
+        #promo-hero {
+            background-image: url('https://placehold.co/1920x400/0F2B48/FFFFFF?text=Current+Promotions'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+        }
+        /* Hidden class for page navigation */
+        .page-content {
+            display: none;
+        }
+        .page-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Section -->
+    <header id="header" class="bg-white shadow-md py-8 px-6 md:px-12 flex justify-between items-center sticky top-0 z-50 rounded-b-lg">
+        <div class="flex items-center">
+            <!-- Placeholder for logo, replace with actual logo if available -->
+            <img src="https://placehold.co/50x50/E0E0E0/333333?text=Logo" alt="Circuit Central Logo" class="w-12 h-12 rounded-full mr-3">
+            <h1 class="text-3xl font-bold text-gray-900">Circuit Central</h1>
+        </div>
+        <nav>
+            <ul id="navbar" class="hidden md:flex space-x-8">
+                <li><a class="text-lg text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 relative group" href="#" data-page="home">Home<span class="absolute inset-x-0 bottom-0 h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+                <li><a class="text-lg text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 relative group" href="#" data-page="shop">Shop<span class="absolute inset-x-0 bottom-0 h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+                <li><a class="text-lg text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 relative group" href="#" data-page="promos">Promos<span class="absolute inset-x-0 bottom-0 h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+                <li><a class="text-lg text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 relative group" href="#" data-page="pcs-laptops">PC's & Laptops<span class="absolute inset-x-0 bottom-0 h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+                <li><a class="text-lg text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 relative group" href="#" data-page="my-account">My Account<span class="absolute inset-x-0 bottom-0 h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+                <li><a class="text-gray-700 hover:text-blue-600 transition-colors duration-300" href="#" data-page="cart"><i class="fas fa-shopping-cart text-xl"></i></a></li>
+            </ul>
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-4 px-6 rounded-b-lg">
+        <ul class="flex flex-col space-y-4">
+            <li><a class="block text-lg text-gray-700 hover:text-blue-600 font-medium py-2" href="#" data-page="home">Home</a></li>
+            <li><a class="block text-lg text-gray-700 hover:text-blue-600 font-medium py-2" href="#" data-page="shop">Shop</a></li>
+            <li><a class="block text-lg text-gray-700 hover:text-blue-600 font-medium py-2" href="#" data-page="promos">Promos</a></li>
+            <li><a class="block text-lg text-gray-700 hover:text-blue-600 font-medium py-2" href="#" data-page="pcs-laptops">PC's & Laptops</a></li>
+            <li><a class="block text-lg text-gray-700 hover:text-blue-600 font-medium py-2" href="#" data-page="my-account">My Account</a></li>
+            <li><a class="block text-lg text-gray-700 hover:text-blue-600 py-2" href="#" data-page="cart"><i class="fas fa-shopping-cart text-xl mr-2"></i>Cart</a></li>
+        </ul>
+    </div>
+    
+    <!-- === Main Content Area - All Pages Go Here === -->
+    <main>
+
+        <!-- Home Page Content -->
+        <div id="home" class="page-content active">
+            <!-- Hero Section -->
+            <section id="hero" class="h-screen flex flex-col justify-center items-start text-left p-6 md:p-12 rounded-b-lg">
+                <h4 class="text-lg md:text-xl font-semibold mb-2 drop-shadow-md">Circuit Central – Powering Connections, Driving Innovation</h4>
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">Super value deals</h2>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-blue-400 mb-4 drop-shadow-lg">On all products</h1>
+                <p class="text-lg md:text-xl mb-8 drop-shadow-md">Save up to 20% off when receiving a referral code</p>
+                <a href="#" data-page="shop" class="inline-block">
+                    <button class="btn-primary bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50">TRADE IN, TRADE NOW</button>
+                </a>
+            </section>
+            
+            <!-- Featured Products Section -->
+            <section id="product1" class="py-16 px-6 md:px-12 bg-white rounded-lg shadow-md mx-4 md:mx-auto my-8 max-w-7xl">
+                <h2 class="text-4xl font-bold text-center mb-4">Featured Products</h2>
+                <p class="text-center text-gray-600 mb-12">Summer Collection On New Modern Designed Desktop PC's</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Product Card 1 -->
+                    <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                        <img src="img/dell/desktops/dell-optiplex-7020-core-i7-12700-16GB-RAM-512GB-SSD-win-11-pro-SFF-desktop-pc/dell-optiplex-7020-core-i7-12700-16GB-RAM-512GB-SSD-win-11-pro-SFF-desktop-pc(front-left).webp" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Dell Optiplex 7020" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-5">
+                            <span class="text-gray-500 text-sm">DELL</span>
+                            <h5 class="text-xl font-semibold mt-2 mb-1">Dell Optiplex 7020</h5>
+                            <div class="star flex text-yellow-400 mb-3">
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-blue-600">R5000</h4>
+                        </div>
+                        <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart text-lg"></i>
+                        </a>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                        <img src="img/dell/desktops/dell-vostro-3030-core-i7-12700-8GB-RAM-512GB-SSD-win-pro-desktop-tower-pc/dell-vostro-3030-core-i7-12700-8GB-RAM-512GB-SSD-win-pro-desktop-tower-pc(front-right).webp" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Dell Vostro 3030" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-5">
+                            <span class="text-gray-500 text-sm">DELL</span>
+                            <h5 class="text-xl font-semibold mt-2 mb-1">Dell Vostro 3030</h5>
+                            <div class="star flex text-yellow-400 mb-3">
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-blue-600">R4500</h4>
+                        </div>
+                        <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart text-lg"></i>
+                        </a>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                        <img src="img/hp/desktops/hp-elite-sff-600-g9/hp-elite-sff-600(front-right).png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="HP Elite SFF 600" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-5">
+                            <span class="text-gray-500 text-sm">HP</span>
+                            <h5 class="text-xl font-semibold mt-2 mb-1">HP Elite SFF 600</h5>
+                            <div class="star flex text-yellow-400 mb-3">
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-blue-600">R5000</h4>
+                        </div>
+                        <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart text-lg"></i>
+                        </a>
+                    </div>
+                    <!-- Product Card 4 -->
+                    <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                        <img src="img/hp/desktops/hp-pro-tower-400-g9/hp-99n10et-pro-tower-400-g9(front-right).png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="HP Pro Tower 400" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-5">
+                            <span class="text-gray-500 text-sm">HP</span>
+                            <h5 class="text-xl font-semibold mt-2 mb-1">HP Pro Tower 400</h5>
+                            <div class="star flex text-yellow-400 mb-3">
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-blue-600">R4330</h4>
+                        </div>
+                        <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart text-lg"></i>
+                        </a>
+                    </div>
+                    <!-- Product Card 5 -->
+                    <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                        <img src="img/lenovo/desktops/ideacentre-AIO-i-gen-9(24,Intel)/ideacentre-AIO-i-gen-9(front-right).avif" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Lenovo Ideacentre AIO i Gen 9" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-5">
+                            <span class="text-gray-500 text-sm">LENOVO</span>
+                            <h5 class="text-xl font-semibold mt-2 mb-1">Lenovo Ideacentre AIO i Gen 9</h5>
+                            <div class="star flex text-yellow-400 mb-3">
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-blue-600">R4500</h4>
+                        </div>
+                        <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart text-lg"></i>
+                        </a>
+                    </div>
+                    <!-- Product Card 6 -->
+                    <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                        <img src="img/lenovo/desktops/thinkcentre-m90t-gen-5-(intel)-tower/thinkcentre-m90t-gen-5-intel-tower(front).avif" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Lenovo ThinkCentre M90t Gen 5" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-5">
+                            <span class="text-gray-500 text-sm">LENOVO</span>
+                            <h5 class="text-xl font-semibold mt-2 mb-1">Lenovo ThinkCentre M90t Gen 5</h5>
+                            <div class="star flex text-yellow-400 mb-3">
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-blue-600">R3499</h4>
+                        </div>
+                        <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart text-lg"></i>
+                        </a>
+                    </div>
+                    <!-- Product Card 7 -->
+                    <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                        <img src="img/hp/desktops/hp-pro-tower-290-g9/hp-pro-tower-290-g9(front-right).png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="HP Pro Tower 290 G9" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-5">
+                            <span class="text-gray-500 text-sm">HP</span>
+                            <h5 class="text-xl font-semibold mt-2 mb-1">HP Pro Tower 290 G9</h5>
+                            <div class="star flex text-yellow-400 mb-3">
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-blue-600">R6000</h4>
+                        </div>
+                        <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart text-lg"></i>
+                        </a>
+                    </div>
+                    <!-- Product Card 8 -->
+                    <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                        <img src="img/lenovo/desktops/thinkcentre-m75s-gen-5(AMD)-SFF/thinkcentre-m57s-gen-5(right-view).avif" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Lenovo ThinkCentre M75s Gen 5" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-5">
+                            <span class="text-gray-500 text-sm">LENOVO</span>
+                            <h5 class="text-xl font-semibold mt-2 mb-1">Lenovo ThinkCentre M75s Gen 5</h5>
+                            <div class="star flex text-yellow-400 mb-3">
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-blue-600">R6000</h4>
+                        </div>
+                        <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Banner Section -->
+            <section id="banner" class="section-m1 py-20 px-6 md:px-12 text-center rounded-lg shadow-md mx-4 md:mx-auto my-8 max-w-7xl">
+                <h4 class="text-xl md:text-2xl font-semibold mb-4 drop-shadow-md">Repair Services</h4>
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg">Up to <span class="text-blue-400">20% Off</span> - All laptops & Desktops</h2>
+                <a href="#" data-page="shop" class="inline-block">
+                    <button class="btn-primary bg-white text-gray-800 px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-50 mt-6">Explore More</button>
+                </a>
+            </section>
+            
+            <!-- New Arrivals Section (Reusing product1 styling) -->
+            <section id="product1" class="py-16 px-6 md:px-12 bg-white rounded-lg shadow-md mx-4 md:mx-auto my-8 max-w-7xl">
+                <h2 class="text-4xl font-bold text-center mb-4">New Arrivals</h2>
+                <p class="text-center text-gray-600 mb-12">Summer Collection Of Laptops In A New Modern Design</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Product Card 1 -->
+                    <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                        <img src="img/dell/laptops/dell-inspiron-3520-15.6-inch-core-i5-1235U-8GB-RAM-512GB-SSD-win-11-home-laptop/dell-inspiron-3520-15.6-inch-core-i5-1235U-8GB-RAM-512GB-SSD-win-11-home-laptop(front).webp" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Dell Inspiron 3520" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-5">
+                            <span class="text-gray-500 text-sm">DELL</span>
+                            <h5 class="text-xl font-semibold mt-2 mb-1">Dell Inspiron 3520</h5>
+                            <div class="star flex text-yellow-400 mb-3">
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-blue-600">R5000</h4>
+                        </div>
+                        <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart text-lg"></i>
+                        </a>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                        <img src="img/dell/laptops/dell-latitude-3450-14-inch-core-ultra-5-125U-8GB-RAM-512GB-SSD-win-11-pro-laptop/dell-latitude-3450-14-inch-core-ultra-5-125U-8GB-RAM-512GB-SSD-win-11-pro-laptop(front-face).webp" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Dell Latitude 3450" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-5">
+                            <span class="text-gray-500 text-sm">DELL</span>
+                            <h5 class="text-xl font-semibold mt-2 mb-1">Dell Latitude 3450</h5>
+                            <div class="star flex text-yellow-400 mb-3">
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-blue-600">R4500</h4>
+                        </div>
+                        <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart text-lg"></i>
+                        </a>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                        <img src="img/dell/laptops/dell-vostro-5640-16-inch-fhd+-core-7-150U-16GB-RAM-1TB-SSD-win-11-pro-laptop/dell-vostro-5640-16-inch-fhd+-core-7-150U-16GB-RAM-1TB-SSD-win-11-pro-laptop(front-right).jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Dell Vostro 5640" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-5">
+                            <span class="text-gray-500 text-sm">DELL</span>
+                            <h5 class="text-xl font-semibold mt-2 mb-1">Dell Vostro 5640</h5>
+                            <div class="star flex text-yellow-400 mb-3">
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-blue-600">R3600</h4>
+                        </div>
+                        <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart text-lg"></i>
+                        </a>
+                    </div>
+                    <!-- Product Card 4 -->
+                    <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                        <img src="img/hp/laptops/hp-laptop-15-fd0016ni/hp-laptop-15-fd0016ni(front-face).jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="HP Laptop 15-fd0016ni" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-5">
+                            <span class="text-gray-500 text-sm">HP</span>
+                            <h5 class="text-xl font-semibold mt-2 mb-1">HP Laptop 15-fd0016ni</h5>
+                            <div class="star flex text-yellow-400 mb-3">
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-blue-600">R6000</h4>
+                        </div>
+                        <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart text-lg"></i>
+                        </a>
+                    </div>
+                    <!-- Product Card 5 -->
+                    <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                        <img src="img/hp/laptops/hp-omnibook-x-laptop-14/hp-omnibook-x-laptop-14(front-face).png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="HP Omnibook X" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-5">
+                            <span class="text-gray-500 text-sm">HP</span>
+                            <h5 class="text-xl font-semibold mt-2 mb-1">HP Omnibook X</h5>
+                            <div class="star flex text-yellow-400 mb-3">
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-blue-600">R4330</h4>
+                        </div>
+                        <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart text-lg"></i>
+                        </a>
+                    </div>
+                    <!-- Product Card 6 -->
+                    <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                        <img src="img/lenovo/laptops/ideapad-slim-5-gen-9(16,AMD)/ideapad-slim-5-gen-9(front-right).avif" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Lenovo Ideapad Slim 5" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-5">
+                            <span class="text-gray-500 text-sm">LENOVO</span>
+                            <h5 class="text-xl font-semibold mt-2 mb-1">Lenovo Ideapad Slim 5</h5>
+                            <div class="star flex text-yellow-400 mb-3">
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-blue-600">R4500</h4>
+                        </div>
+                        <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart text-lg"></i>
+                        </a>
+                    </div>
+                    <!-- Product Card 7 -->
+                    <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                        <img src="img/lenovo/laptops/legion-slim-7i-gen-8(16,Intel)/legion-slim-7i-gen-8(erect).avif" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Lenovo Legion Slim" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-5">
+                            <span class="text-gray-500 text-sm">LENOVO</span>
+                            <h5 class="text-xl font-semibold mt-2 mb-1">Lenovo Legion Slim</h5>
+                            <div class="star flex text-yellow-400 mb-3">
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-blue-600">R8000</h4>
+                        </div>
+                        <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart text-lg"></i>
+                        </a>
+                    </div>
+                    <!-- Product Card 8 -->
+                    <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                        <img src="img/lenovo/laptops/thinkbook-14-gen-6(14,AMD)/thinkbook-14-gen-6(right-front).avif" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Lenovo ThinkBook" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-5">
+                            <span class="text-gray-500 text-sm">LENOVO</span>
+                            <h5 class="text-xl font-semibold mt-2 mb-1">Lenovo ThinkBook</h5>
+                            <div class="star flex text-yellow-400 mb-3">
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-blue-600">R4500</h4>
+                        </div>
+                        <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Small Banners Section -->
+            <section id="sm-banner" class="section-p1 grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-12 mx-4 md:mx-auto my-8 max-w-7xl">
+                <div class="banner-box bg-cover bg-center bg-no-repeat text-white p-16 rounded-xl shadow-lg flex flex-col justify-center items-start min-h-[300px]">
+                    <h4 class="text-xl font-semibold mb-2 drop-shadow-md">Crazy deals</h4>
+                    <h2 class="text-4xl font-extrabold mb-2 drop-shadow-lg">buy 1 get 1 free</h2>
+                    <span class="text-lg mb-6 drop-shadow-md">The best classic laptop is on sale at Circuit Central</span>
+                    <button class="btn-secondary bg-transparent border-2 border-white text-white px-6 py-3 rounded-full text-md font-semibold hover:bg-white hover:text-gray-800 transition-colors duration-300">Learn More</button>
+                </div>
+                <div class="banner-box banner-box2 bg-cover bg-center bg-no-repeat text-white p-16 rounded-xl shadow-lg flex flex-col justify-center items-start min-h-[300px]">
+                    <h4 class="text-xl font-semibold mb-2 drop-shadow-md">spring/summer</h4>
+                    <h2 class="text-4xl font-extrabold mb-2 drop-shadow-lg">upcoming season</h2>
+                    <span class="text-lg mb-6 drop-shadow-md">The best classic laptop is on sale at Circuit Central</span>
+                    <button class="btn-secondary bg-transparent border-2 border-white text-white px-6 py-3 rounded-full text-md font-semibold hover:bg-white hover:text-gray-800 transition-colors duration-300">Collection</button>
+                </div>
+            </section>
+            
+            <!-- Newsletter Section -->
+            <section id="newsletter" class="section-p1 section-m1 bg-blue-600 text-white py-16 px-6 md:px-12 rounded-lg shadow-md mx-4 md:mx-auto my-8 max-w-7xl flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div class="newstext mb-8 md:mb-0 md:mr-8">
+                    <h4 class="text-3xl font-bold mb-2">Sign Up For Newsletters</h4>
+                    <p class="text-lg">Get E-mail updates about our latest shop and <span class="text-yellow-300 font-semibold">special offers.</span></p>
+                </div>
+                <div class="form flex flex-col sm:flex-row w-full md:w-auto">
+                    <input type="text" placeholder="Your email address" class="w-full sm:w-auto px-6 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300 text-gray-800 mb-4 sm:mb-0 sm:mr-4">
+                    <button class="btn-primary bg-white text-blue-600 px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-50">Sign Up</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Shop Page Content -->
+        <div id="shop" class="page-content">
+            <section class="py-16 px-6 md:px-12 mx-4 md:mx-auto my-8 max-w-7xl">
+                <h2 class="text-5xl font-bold text-center mb-4">Our Full Shop</h2>
+                <p class="text-center text-gray-600 mb-12">Browse all our products from desktops to laptops and more!</p>
+                <!-- This is where all products would be displayed -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                     <!-- Product cards would go here -->
+                     <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                        <img src="https://placehold.co/400x300/E0E0E0/333333?text=Product+Image" alt="Sample Product" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-5">
+                            <span class="text-gray-500 text-sm">BRAND</span>
+                            <h5 class="text-xl font-semibold mt-2 mb-1">Sample Product Name</h5>
+                            <div class="star flex text-yellow-400 mb-3">
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-blue-600">R4000</h4>
+                        </div>
+                        <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Promos Page Content -->
+        <div id="promos" class="page-content">
+            <section id="promo-hero" class="py-24 px-6 md:px-12 text-center rounded-b-lg">
+                <h1 class="text-5xl font-extrabold text-white drop-shadow-lg">Special Offers & Promotions</h1>
+                <p class="text-xl text-gray-200 mt-4 drop-shadow-md">Don't miss out on these limited-time deals!</p>
+            </section>
+            
+            <section class="py-16 px-6 md:px-12 mx-4 md:mx-auto my-8 max-w-7xl">
+                <h2 class="text-4xl font-bold text-center mb-12">Current Promotions</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Promo Card 1 -->
+                    <div class="bg-blue-600 text-white p-8 rounded-xl shadow-lg flex flex-col justify-center items-center text-center">
+                        <h3 class="text-3xl font-bold mb-2">Summer Sale!</h3>
+                        <p class="text-lg mb-4">Get an extra 15% off all laptops and desktops. Limited time only!</p>
+                        <a href="#" data-page="shop" class="btn-primary bg-white text-blue-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors duration-300">Shop Now</a>
+                    </div>
+                    <!-- Promo Card 2 -->
+                    <div class="bg-gray-800 text-white p-8 rounded-xl shadow-lg flex flex-col justify-center items-center text-center">
+                        <h3 class="text-3xl font-bold mb-2">Free Shipping</h3>
+                        <p class="text-lg mb-4">Enjoy free shipping on all orders over R2500.</p>
+                        <a href="#" data-page="shop" class="btn-primary bg-white text-gray-800 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition-colors duration-300">View Details</a>
+                    </div>
+                    <!-- Promo Card 3 -->
+                    <div class="bg-white text-gray-800 p-8 rounded-xl shadow-lg flex flex-col justify-center items-center text-center border border-gray-200">
+                        <h3 class="text-3xl font-bold mb-2">Student Discount</h3>
+                        <p class="text-lg mb-4">Verify your student status and get a 10% discount on all purchases.</p>
+                        <a href="#" data-page="my-account" class="btn-primary bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors duration-300">Learn More</a>
+                    </div>
+                    <!-- Promo Card 4 -->
+                    <div class="bg-white text-gray-800 p-8 rounded-xl shadow-lg flex flex-col justify-center items-center text-center border border-gray-200">
+                        <h3 class="text-3xl font-bold mb-2">PC Build Bonus</h3>
+                        <p class="text-lg mb-4">Buy a custom PC build and get a free gaming mouse!</p>
+                        <a href="#" data-page="shop" class="btn-primary bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors duration-300">Build Your PC</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- PC's & Laptops Page Content -->
+        <div id="pcs-laptops" class="page-content">
+             <section class="py-16 px-6 md:px-12 mx-4 md:mx-auto my-8 max-w-7xl">
+                <h2 class="text-5xl font-bold text-center mb-4">PC's & Laptops</h2>
+                <p class="text-center text-gray-600 mb-12">Explore our full range of computers, from powerful desktops to portable laptops.</p>
+                <!-- This section would contain specific PC and Laptop products -->
+                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                     <!-- Product cards would go here -->
+                     <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                        <img src="https://placehold.co/400x300/E0E0E0/333333?text=Product+Image" alt="Sample Product" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-5">
+                            <span class="text-gray-500 text-sm">BRAND</span>
+                            <h5 class="text-xl font-semibold mt-2 mb-1">Sample Laptop Name</h5>
+                            <div class="star flex text-yellow-400 mb-3">
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm mr-1"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-blue-600">R6000</h4>
+                        </div>
+                        <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- My Account Page Content (placeholder) -->
+        <div id="my-account" class="page-content">
+             <section class="py-16 px-6 md:px-12 mx-4 md:mx-auto my-8 max-w-7xl">
+                <h2 class="text-5xl font-bold text-center mb-4">My Account</h2>
+                <p class="text-center text-gray-600 mb-12">Manage your orders and personal information here.</p>
+            </section>
+        </div>
+
+        <!-- Cart Page Content (placeholder) -->
+        <div id="cart" class="page-content">
+             <section class="py-16 px-6 md:px-12 mx-4 md:mx-auto my-8 max-w-7xl">
+                <h2 class="text-5xl font-bold text-center mb-4">Shopping Cart</h2>
+                <p class="text-center text-gray-600 mb-12">Your cart is currently empty. Start shopping now!</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-gray-300 py-12 px-6 md:px-12 rounded-t-lg">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Company Info -->
+            <div class="col-span-1">
+                <h4 class="text-xl font-bold text-white mb-4">Circuit Central</h4>
+                <p class="text-sm"><strong>Address:</strong> 123 Tech Lane, Innovation City, 7700</p>
+                <p class="text-sm"><strong>Phone:</strong> +27 21 123 4567</p>
+                <p class="text-sm"><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+                <div class="social-icons mt-4 flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-pinterest-p text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-youtube text-xl"></i></a>
+                </div>
+            </div>
+
+            <!-- About Us -->
+            <div class="col-span-1">
+                <h4 class="text-xl font-bold text-white mb-4">About</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">About Us</a></li>
+                    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">Delivery Information</a></li>
+                    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">Privacy Policy</a></li>
+                    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">Terms & Conditions</a></li>
+                    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- My Account -->
+            <div class="col-span-1">
+                <h4 class="text-xl font-bold text-white mb-4">My Account</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">Sign In</a></li>
+                    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">View Cart</a></li>
+                    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">My Wishlist</a></li>
+                    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">Track My Order</a></li>
+                    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">Help</a></li>
+                </ul>
+            </div>
+
+            <!-- Install App -->
+            <div class="col-span-1">
+                <h4 class="text-xl font-bold text-white mb-4">Install App</h4>
+                <p class="text-sm mb-4">From App Store or Google Play</p>
+                <div class="flex flex-col space-y-3">
+                    <img src="https://placehold.co/150x50/333333/FFFFFF?text=App+Store" alt="App Store" class="rounded-lg shadow-md">
+                    <img src="https://placehold.co/150x50/333333/FFFFFF?text=Google+Play" alt="Google Play" class="rounded-lg shadow-md">
+                </div>
+                <p class="text-sm mt-4">Secured Payment Gateways</p>
+                <img src="https://placehold.co/200x50/333333/FFFFFF?text=Payment+Options" alt="Payment Options" class="mt-2 rounded-lg shadow-md">
+            </div>
+        </div>
+        <div class="text-center text-gray-500 text-sm mt-12 pt-8 border-t border-gray-700">
+            <p>&copy; 2025 Circuit Central. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // JavaScript for page navigation and link highlighting
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('#navbar a, #mobile-menu a');
+            const pageContents = document.querySelectorAll('.page-content');
+            
+            // Function to show the active page and highlight the active link
+            const showPage = (pageId) => {
+                pageContents.forEach(page => {
+                    page.classList.remove('active');
+                });
+                document.getElementById(pageId).classList.add('active');
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('text-blue-600', 'font-bold');
+                    link.classList.add('text-gray-700');
+                    const underline = link.querySelector('span');
+                    if (underline) {
+                        underline.classList.remove('scale-x-100');
+                    }
+
+                    if (link.dataset.page === pageId) {
+                        link.classList.add('text-blue-600', 'font-bold');
+                        link.classList.remove('text-gray-700');
+                        if (underline) {
+                            underline.classList.add('scale-x-100');
+                        }
+                    }
+                });
+            };
+
+            // Event listeners for navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const pageId = link.dataset.page;
+                    showPage(pageId);
+                    // Close mobile menu after clicking a link
+                    if (!mobileMenu.classList.contains('hidden')) {
+                         mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Initial page load
+            const initialPage = window.location.hash.substring(1) || 'home';
+            showPage(initialPage);
+        });
+    </script>
+</body>
+</html>
