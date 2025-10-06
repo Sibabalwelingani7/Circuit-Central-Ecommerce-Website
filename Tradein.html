@@ -4,402 +4,395 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trade-In | Circuit Central</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        #navbar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#navbar li{
-    list-style: none;
-    padding: 0 20px;
-    position: relative;
-}
-
-#navbar li a{
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    color: #1a1a1a;
-    transition: 0.3s ease;
-}
-
-#navbar li a:hover,
-#navbar li a.active{
-    color: #088178;
-}
-
-#navbar li a.active::after,
-#navbar li a:hover::after{
-    content: "";
-    width: 30%;
-    height: 2px;
-    background: #088178;
-    position: absolute;
-    bottom: -4px;
-    left: 20px;
-}
-
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 40px;
-            background-color: #f5f5f7;
-            color: #000000;
-            background-image: url('img/Cicuit.jpg'); /* Replace with your image URL */
-            background-size: cover; /* Ensures the image covers the entire page */
-            background-position: center; /* Centers the image */
-            background-attachment: fixed; /* Keeps the background fixed when scrolling */
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9; /* slate-100 */
         }
-        body image{
-            width: 30%;
-        }
-        h1 {
-            font-size: 2.5em;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        h2 {
-            font-size: 1.8em;
-            font-weight: bold;
-            margin-top: 40px;
-        }
-        p {
-            font-size: 1.2em;
-            color: #000000;
-        }
-        .cards-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-        .card {
-            padding: 20px;
-            height: 150px;
-            border-radius: 15px;
-            width: 230px;
-            cursor: pointer;
-            background-color: white;
-            text-align: center;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-        .card-image {
-            width: 80px; /* Adjust size as needed */
-            height: auto;
-            display: block;
-            margin: 0 auto 10px; /* Centers the image and adds space below */
-        }
-        .popup {
-            display:none;
-            position:center;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-            width: 350px;
-            text-align: left;
-        }
-        .close {
-            cursor: pointer;
-            color: #d9534f;
-            font-size: 1.5em;
-            float: right;
-        }
-        button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #000000;
+        /* Gradient for the steps */
+        .trade-in-step-card {
+            background-image: linear-gradient(135deg, #7F00FF, #E100FF);
             color: white;
-            font-size: 1.1em;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        button:hover {
-            background-color: #000000;
+        .trade-in-step-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
-        .headline {
-            font-size: 36px;
-            line-height: 1.2;  
-            margin-bottom: 20px;
-        }
-        .highlight {
-            display: block;
-            font-size: 50px;
-            font-weight: bold;
-        }
-        
     </style>
 </head>
-<body>
-    <section id="header">
-        <h1 style="display: inline; margin-left: 10px;">Circuit Central</h1>
-        <div>
-            <ul id="navbar">
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="Shop.html">Shop</a></li>
-                <li><a href="Promos.html">Promos</a></li>
-                <li><a href="PC's & Laptops.html">PC's & Laptops</a></li>
-                <li><a href="My Account.html">My Account</a></li>
-                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+<body class="bg-gray-100 text-gray-800">
+
+<!-- Header Section -->
+    <header id="header" class="bg-white shadow-md py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 z-50 rounded-b-lg">
+        <div class="flex items-center">
+            <!-- Placeholder for logo, replace with actual logo if available -->
+            <img src="img/final_logo.png" alt="Circuit Central Logo" class="w-12 h-12 rounded-full mr-3">
+            <!-- <img src="https://placehold.co/50x50/E0E0E0/333333?text=Logo" alt="Circuit Central Logo" class="w-12 h-12 rounded-full mr-3"> -->
+            
+            <h1 class="text-3xl font-bold text-gray-900">Circuit Central</h1>
+        </div>
+        <nav>
+            <ul id="navbar" class="hidden md:flex space-x-8">
+                <li><a class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 relative group" href="index.html">Home<span class="absolute inset-x-0 bottom-0 h-0.5 bg-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+                <li><a class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 relative group" href="Shop.html">Shop<span class="absolute inset-x-0 bottom-0 h-0.5 bg-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+                <li><a class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 relative group" href="Promos.html">Promos<span class="absolute inset-x-0 bottom-0 h-0.5 bg-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+                <li><a class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 relative group" href="Tradein.html">Trade In<span class="absolute inset-x-0 bottom-0 h-0.5 bg-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+                <li><a class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 relative group" href="My Account.html">My Account<span class="absolute inset-x-0 bottom-0 h-0.5 bg-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+                <li><a class="text-gray-700 hover:text-green-600 transition-colors duration-300" href="cart.html"><i class="fas fa-shopping-cart text-xl"></i></a></li>
             </ul>
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-4 px-6 rounded-b-lg">
+        <ul class="flex flex-col space-y-4">
+            <li><a class="block text-gray-700 hover:text-green-600 font-medium py-2" href="index.html">Home</a></li>
+            <li><a class="block text-gray-700 hover:text-green-600 font-medium py-2" href="Shop.html">Shop</a></li>
+            <li><a class="block text-gray-700 hover:text-green-600 font-medium py-2" href="Promos.html">Promos</a></li>
+            <li><a class="block text-gray-700 hover:text-green-600 font-medium py-2" href="Tradein.htmll">Trade In</a></li>
+            <li><a class="block text-gray-700 hover:text-green-600 font-medium py-2" href="My Account.html">My Account</a></li>
+            <li><a class="block text-gray-700 hover:text-green-600 py-2" href="cart.html"><i class="fas fa-shopping-cart text-xl mr-2"></i>Cart</a></li>
+        </ul>
+    </div>
+
+<main class="container mx-auto px-4 py-12">
+    <div class="text-center mb-10">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
+            Trade-In & Upgrade to a High-Quality Refurbished Computer!
+        </h1>
+        <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+            Turn your old device into savings! Trade in your pre-owned laptop, desktop, tablet, or smartphone and get credit toward a top-quality refurbished computer at Circuit Central.
+        </p>
+    </div>
+
+    <section class="mb-12">
+    <div class="bg-white p-6 rounded-3xl shadow-lg w-full max-w-7xl mx-auto">
+        <h2 class="text-center text-xl md:text-2xl font-bold text-gray-800 mb-8">
+            Follow these steps to get your Windows Laptop ready for trade in
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+            <div class="trade-in-step-card p-6 rounded-lg text-center flex flex-col items-center">
+                <i class="fas fa-calendar-alt text-4xl mb-4 text-white"></i>
+                <h3 class="font-semibold text-sm mb-2 text-white">Book a Trade in consultation at your nearest iStore</h3>
+                <a href="book-trade-in.html" class="mt-auto px-4 py-2 bg-black text-white rounded-full font-semibold text-sm">Book now</a>
+            </div>
+            <div class="trade-in-step-card p-6 rounded-lg text-center flex flex-col items-center">
+                <i class="fas fa-cloud-upload-alt text-4xl mb-4 text-white"></i>
+                <h3 class="font-semibold text-sm mb-2 text-white">Back up your data, images and other information on your laptop before coming to store</h3>
+            </div>
+            <div class="trade-in-step-card p-6 rounded-lg text-center flex flex-col items-center">
+                <i class="fas fa-plug text-4xl mb-4 text-white"></i>
+                <h3 class="font-semibold text-sm mb-2 text-white">Remember to bring your laptop power adapter and cable with you</h3>
+            </div>
+            <div class="trade-in-step-card p-6 rounded-lg text-center flex flex-col items-center">
+                <i class="fas fa-user text-4xl mb-4 text-white"></i>
+                <h3 class="font-semibold text-sm mb-2 text-white">Come in store and meet with your appointed consultant</h3>
+            </div>
+            <div class="trade-in-step-card p-6 rounded-lg text-center flex flex-col items-center">
+                <i class="fas fa-search-plus text-4xl mb-4 text-white"></i>
+                <h3 class="font-semibold text-sm mb-2 text-white">A series of 'on device' diagnostics and physical assessment will be completed</h3>
+            </div>
+            <div class="trade-in-step-card p-6 rounded-lg text-center flex flex-col items-center">
+                <i class="fas fa-check text-4xl mb-4 text-white"></i>
+                <h3 class="font-semibold text-sm mb-2 text-white">Your trade-in value will be confirmed, which you can use to discount any Mac</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .trade-in-step-card {
+        background-image: linear-gradient(135deg, #a350ff, #e100ff);
+        color: white;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .trade-in-step-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+    <section class="trade-in-section bg-white p-8 rounded-xl shadow-lg w-full max-w-4xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Get Your Estimated Trade-In Value</h2>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-8">
+            <div class="w-20 h-20 bg-green-500 rounded-full text-white flex items-center justify-center text-3xl font-bold">1</div>
+            <div class="text-center md:text-left">
+                <h3 class="font-semibold text-lg">Select Your Device</h3>
+                <p class="text-sm text-gray-500">Click on the card that matches your device type.</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-10">
+            <div class="device-card cursor-pointer p-4 rounded-xl shadow-md border-2 border-transparent transition-all hover:border-green-500 text-center" 
+                 data-device-type="laptops">
+                <img src="img/laptop1.jpg" alt="Laptops" class="w-24 h-24 mx-auto mb-2">
+                <p class="font-semibold">Laptops</p>
+            </div>
+            <div class="device-card cursor-pointer p-4 rounded-xl shadow-md border-2 border-transparent transition-all hover:border-green-500 text-center" 
+                 data-device-type="desktops">
+                <img src="img/Desktop Img.webp" alt="Desktops" class="w-24 h-24 mx-auto mb-2">
+                <p class="font-semibold">Desktops</p>
+            </div>
+            <div class="device-card cursor-pointer p-4 rounded-xl shadow-md border-2 border-transparent transition-all hover:border-green-500 text-center" 
+                 data-device-type="tablets">
+                <img src="https://images.unsplash.com/photo-1623126908029-58cb08a2b272?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dGFibGV0fGVufDB8fDB8fHww" alt="Tablets" class="w-24 h-24 mx-auto mb-2">
+                <p class="font-semibold">Tablets</p>
+            </div>
+            <div class="device-card cursor-pointer p-4 rounded-xl shadow-md border-2 border-transparent transition-all hover:border-green-500 text-center" 
+                 data-device-type="smartphones">
+                <img src="https://images.unsplash.com/photo-1612442058361-178007e5e498?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fHNtYXJ0cGhvbmV8ZW58MHx8MHx8fDA%3D" alt="Smartphones" class="w-24 h-24 mx-auto mb-2">
+                <p class="font-semibold">Smartphones</p>
+            </div>
+        </div>
+
+        <div id="tradeInForm" class="hidden">
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-8">
+                <div class="w-20 h-20 bg-green-500 rounded-full text-white flex items-center justify-center text-3xl font-bold">2</div>
+                <div class="text-center md:text-left">
+                    <h3 class="font-semibold text-lg">Tell Us About Your Device</h3>
+                    <p class="text-sm text-gray-500">Provide details about its model and condition.</p>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div>
+                    <label for="deviceModel" class="block text-sm font-medium text-gray-700">Select Model</label>
+                    <select id="deviceModel" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 text-sm">
+                        <option value="">Select a model...</option>
+                    </select>
+                </div>
+
+                <div id="conditionQuestions" class="space-y-6">
+                    <div>
+                        <h4 class="font-semibold text-gray-800">What is the condition of the product's body?</h4>
+                        <div class="flex flex-wrap gap-4 mt-2">
+                            <label class="flex items-center space-x-2"><input type="radio" name="bodyCondition" value="100" class="text-green-600 focus:ring-green-500"><span>Looks like new</span></label>
+                            <label class="flex items-center space-x-2"><input type="radio" name="bodyCondition" value="85" class="text-green-600 focus:ring-green-500"><span>Lightly used</span></label>
+                            <label class="flex items-center space-x-2"><input type="radio" name="bodyCondition" value="60" class="text-green-600 focus:ring-green-500"><span>Scratched or dents</span></label>
+                            <label class="flex items-center space-x-2"><input type="radio" name="bodyCondition" value="30" class="text-green-600 focus:ring-green-500"><span>Cracked</span></label>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-800">What is the condition of the screen?</h4>
+                        <div class="flex flex-wrap gap-4 mt-2">
+                            <label class="flex items-center space-x-2"><input type="radio" name="screenCondition" value="0" class="text-green-600 focus:ring-green-500"><span>Looks like new</span></label>
+                            <label class="flex items-center space-x-2"><input type="radio" name="screenCondition" value="10" class="text-green-600 focus:ring-green-500"><span>Lightly used</span></label>
+                            <label class="flex items-center space-x-2"><input type="radio" name="screenCondition" value="25" class="text-green-600 focus:ring-green-500"><span>Scratched</span></label>
+                            <label class="flex items-center space-x-2"><input type="radio" name="screenCondition" value="50" class="text-green-600 focus:ring-green-500"><span>Cracked</span></label>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-800">Does your product turn on and function normally?</h4>
+                        <div class="flex flex-wrap gap-4 mt-2">
+                            <label class="flex items-center space-x-2"><input type="radio" name="functionality" value="0" class="text-green-600 focus:ring-green-500"><span>Yes</span></label>
+                            <label class="flex items-center space-x-2"><input type="radio" name="functionality" value="50" class="text-green-600 focus:ring-green-500"><span>No</span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <button id="calculateBtn" class="w-full py-3 px-4 rounded-xl text-white text-lg font-semibold bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                    Calculate Estimated Trade-In Value
+                </button>
+                <div id="tradeInValue" class="mt-6 text-center text-3xl font-bold text-gray-900 hidden">
+                    <p>Estimated Value: <span id="valueDisplay"></span></p>
+                    <p class="text-sm text-gray-500 mt-2">Final value is determined after a physical assessment.</p>
+                </div>
+            </div>
         </div>
     </section>
-    <img src="Images/exchange.png" alt="">
-    <h1 class="headline">Trade In & Upgrade to a High-Quality<br> Refurbished Computer!</h1>
-    <p>Turn your old device into savings!<br> Trade in your pre-owned laptop, desktop, tablet, or smartphone and get credit toward a top-quality refurbished computer at Circuit Central.</p>
+</main>
 
-    <h2>Find Out How Much Your Device is Worth</h2>
-    <p>Select your product to get an estimate.<br> Final value is determined after a physical assessment.</p>
+<!-- Footer Section -->
+    <footer class="bg-gray-900 text-gray-300 py-12 px-6 md:px-12 rounded-t-lg">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Company Info -->
+            <div class="col-span-1">
+                <h4 class="text-xl font-bold text-white mb-4">Circuit Central</h4>
+                <p class="text-sm"><strong>Address:</strong> 123 Tech Lane, Innovation City,    00</p>
+                <p class="text-sm"><strong>Phone:</strong> +27 21 123 4567</p>
+                <p class="text-sm"><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+                <div class="social-icons mt-4 flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-pinterest-p text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-youtube text-xl"></i></a>
+                </div>
+            </div>
 
-    <div class="cards-container">
-        <div class="card" onclick="showPopup('laptopsPopup')">
-            <img src="img/laptop1.jpg" alt="Laptops" class="card-image">
-            Laptops
+            <!-- About Us -->
+            <div class="col-span-1">
+                <h4 class="text-xl font-bold text-white mb-4">About</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">About Us</a></li>
+                    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">Delivery Information</a></li>
+                    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">Privacy Policy</a></li>
+                    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">Terms & Conditions</a></li>
+                    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- My Account -->
+            <div class="col-span-1">
+                <h4 class="text-xl font-bold text-white mb-4">My Account</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">Sign In</a></li>
+                    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">View Cart</a></li>
+                    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">My Wishlist</a></li>
+                    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">Track My Order</a></li>
+                    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">Help</a></li>
+                </ul>
+            </div>
+
+            <!-- Install App -->
+            <div class="col-span-1">
+                <h4 class="text-xl font-bold text-white mb-4">Install App</h4>
+                <p class="text-sm mb-4">From App Store or Google Play</p>
+                <div class="flex flex-col space-y-3">
+                    <img src="https://i.pinimg.com/736x/be/78/2e/be782e3668252914e7550183710d1a20.jpg" alt="App Store" class="rounded-lg shadow-md">
+                    <img src="https://i.pinimg.com/1200x/f3/7d/a4/f37da494b60e3b7ed6e3e08a1ddba2fa.jpg" alt="Google Play" class="rounded-lg shadow-md">
+                </div>
+                <p class="text-sm mt-4">Secured Payment Gateways</p>
+                <img src="https://placehold.co/200x50/333333/FFFFFF?text=Payment+Options" alt="Payment Options" class="mt-2 rounded-lg shadow-md">
+            </div>
         </div>
-        <div class="card" onclick="showPopup('desktopsPopup')">
-            <img src="img/Desktop Img.webp" alt="Desktops" class="card-image">
-            Desktops
+        <div class="text-center text-gray-500 text-sm mt-12 pt-8 border-t border-gray-700">
+            <p>&copy; 2025 Circuit Central. All rights reserved.</p>
         </div>
+    </footer>
 
-    <div id="laptopsPopup" class="popup">
-        <span class="close" onclick="closePopup('laptopsPopup')">&times;</span>
-        <h2>Get your estimate trade-in value in 3 simple steps</h2>
-        <p>Estimated value is inclusive of additional trade-in support</p>
-        <button onclick="showModelDropdown('laptops')">Choose your model</button>
-        <div id="modelDropdown-laptops" style="display: none;">
-            <select id="deviceModel-laptops" onchange="showConditionForm('laptops')">
-                <option value="">Select Model</option>
-                <option value="Lenovo">Lenovo</option>
-                <option value="Dell">Dell</option>
-                <option value="HP">HP</option>
-            </select>
-            <select id="deviceModel-laptops" onchange="showConditionForm('laptops')">
-                <option value="">Select Brand</option>
-                <option value="Lenovo">Lenovo</option>
-                <option value="Dell">Dell</option>
-                <option value="HP">HP</option>
-            </select>
-        </div>
-        <div id="conditionForm-laptops" style="display: none;">
-            <h3>What is the condition of your product's body?</h3>
-            <input type="radio" name="bodyCondition-laptops" value="100"> Looks like new<br>
-            <input type="radio" name="bodyCondition-laptops" value="85"> Lightly used<br>
-            <input type="radio" name="bodyCondition-laptops" value="60"> Scratched or dents<br>
-            <input type="radio" name="bodyCondition-laptops" value="30"> Cracked<br>
-            
-            <h3>What is the condition of your screen?</h3>
-            <input type="radio" name="screenCondition-laptops" value="0"> Looks like new<br>
-            <input type="radio" name="screenCondition-laptops" value="10"> Lightly used<br>
-            <input type="radio" name="screenCondition-laptops" value="25"> Scratched<br>
-            <input type="radio" name="screenCondition-laptops" value="50"> Cracked<br>
-            
-            <h3>Does your product turn on and function normally?</h3>
-            <input type="radio" name="functionality-laptops" value="0"> Yes<br>
-            <input type="radio" name="functionality-laptops" value="50"> No<br>
-            
-            <button onclick="calculateTradeIn('laptops')">Calculate Trade-in</button>
-            <p id="tradeInValue-laptops"></p>
+<script>
+    // Mock Data for Trade-In Values
+    const TRADE_IN_VALUES = {
+        laptops: [
+            { name: 'Lenovo ThinkPad', baseValue: 12000 },
+            { name: 'Dell XPS 13', baseValue: 15000 },
+            { name: 'HP Spectre x360', baseValue: 13500 },
+            { name: 'Other Laptop', baseValue: 8000 }
+        ],
+        desktops: [
+            { name: 'HP Omen Gaming PC', baseValue: 18000 },
+            { name: 'Dell OptiPlex', baseValue: 9000 },
+            { name: 'Lenovo IdeaCentre', baseValue: 10500 },
+            { name: 'Other Desktop', baseValue: 7000 }
+        ],
+        tablets: [
+            { name: 'iPad Pro', baseValue: 8000 },
+            { name: 'Samsung Galaxy Tab', baseValue: 6500 },
+            { name: 'Microsoft Surface', baseValue: 9500 },
+            { name: 'Other Tablet', baseValue: 4000 }
+        ],
+        smartphones: [
+            { name: 'iPhone 14', baseValue: 10000 },
+            { name: 'Samsung Galaxy S23', baseValue: 9000 },
+            { name: 'Google Pixel 7', baseValue: 8500 },
+            { name: 'Other Smartphone', baseValue: 3000 }
+        ]
+    };
 
-            <!-- OKAY button to close the form after calculation -->
-        <button id="okayButton-laptops" style="display: none;" onclick="closePopup('laptopsPopup')">OKAY</button>
-        </div>
-    </div>
+    // Global state variables
+    let selectedDeviceType = null;
+    let selectedDeviceModel = null;
 
-    <div id="desktopsPopup" class="popup">
-        <span class="close" onclick="closePopup('desktopsPopup')">&times;</span>
-        <h2>Get your estimate trade-in value in 3 simple steps</h2>
-        <p>Estimated value is inclusive of additional trade-in support</p>
-        <button onclick="showModelDropdown('desktops')">Choose your model</button>
-        <div id="modelDropdown-desktops" style="display: none;">
-            <select id="deviceModel-desktops" onchange="showConditionForm('desktops')">
-                <option value="">Select Model</option>
-                <option value="Lenovo"></option>
-                <option value="Dell"><Dell</option>
-                <option value="HP">HP</option>
-            </select>
-            <select id="deviceModel-desktops" onchange="showConditionForm('desktops')">
-                <option value="">Select Brand</option>
-                <option value="Lenovo">Lenovo</option>
-                <option value="Dell">Dell</option>
-                <option value="HP">HP</option>
-            </select>
-        </div>
-        <div id="conditionForm-desktops" style="display: none;">
-            <h3>What is the condition of your product's body?</h3>
-            <input type="radio" name="bodyCondition-desktops" value="100"> Looks like new<br>
-            <input type="radio" name="bodyCondition-desktops" value="85"> Lightly used<br>
-            <input type="radio" name="bodyCondition-desktops" value="60"> Scratched or dents<br>
-            <input type="radio" name="bodyCondition-desktops" value="30"> Cracked<br>
-            
-            <h3>What is the condition of your screen?</h3>
-            <input type="radio" name="screenCondition-desktops" value="0"> Looks like new<br>
-            <input type="radio" name="screenCondition-desktops" value="10"> Lightly used<br>
-            <input type="radio" name="screenCondition-desktops" value="25"> Scratched<br>
-            <input type="radio" name="screenCondition-desktops" value="50"> Cracked<br>
-            
-            <h3>Does your product turn on and function normally?</h3>
-            <input type="radio" name="functionality-desktops" value="0"> Yes<br>
-            <input type="radio" name="functionality-desktops" value="50"> No<br>
-            
-            <button onclick="calculateTradeIn('desktops')">Calculate Trade-in</button>
-            <p id="tradeInValue-desktops"></p>
+    // Get DOM elements
+    const deviceCards = document.querySelectorAll('.device-card');
+    const tradeInForm = document.getElementById('tradeInForm');
+    const deviceModelSelect = document.getElementById('deviceModel');
+    const calculateBtn = document.getElementById('calculateBtn');
+    const tradeInValueDisplay = document.getElementById('tradeInValue');
+    const valueDisplay = document.getElementById('valueDisplay');
 
-            <!-- OKAY button to close the form after calculation -->
-        <button id="okayButton-desktops" style="display: none;" onclick="closePopup('desktopsPopup')">OKAY</button>
-        </div>
-    </div>
+    // Add click event listeners to device cards
+    deviceCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const type = card.dataset.deviceType;
+            selectedDeviceType = type;
+            
+            // Highlight selected card
+            deviceCards.forEach(c => c.classList.remove('border-green-500'));
+            card.classList.add('border-green-500');
 
-    <div id="tabletsPopup" class="popup">
-        <span class="close" onclick="closePopup('tabletsPopup')">&times;</span>
-        <h2>Get your estimate trade-in value in 3 simple steps</h2>
-        <p>Estimated value is inclusive of additional trade-in support</p>
-        <button onclick="showModelDropdown('tablets')">Choose your model</button>
-        <div id="modelDropdown-tablets" style="display: none;">
-            <select id="deviceModel-tablets" onchange="showConditionForm('tablets')">
-                <option value="">Select Model</option>
-                <option value="Lenovo">Lenovo</option>
-                <option value="Dell">Dell</option>
-                <option value="HP">HP</option>
-            </select>
-            <select id="deviceModel-tablets" onchange="showConditionForm('tablets')">
-                <option value="">Select Brand</option>
-                <option value="Lenovo">Lenovo</option>
-                <option value="Dell">Dell</option>
-                <option value="HP">HP</option>
-            </select>
-        </div>
-        <div>
+            // Populate the model dropdown based on selected device type
+            populateModelDropdown(type);
             
-        </div>
-        <div id="conditionForm-tablets" style="display: none;">
-            <h3>What is the condition of your product's body?</h3>
-            <input type="radio" name="bodyCondition-tablets" value="100"> Looks like new<br>
-            <input type="radio" name="bodyCondition-tabletsPopup" value="85"> Lightly used<br>
-            <input type="radio" name="bodyCondition-tabletsPopup" value="60"> Scratched or dents<br>
-            <input type="radio" name="bodyCondition-tabletsPopup" value="30"> Cracked<br>
-            
-            <h3>What is the condition of your screen?</h3>
-            <input type="radio" name="screenCondition-tablets" value="0"> Looks like new<br>
-            <input type="radio" name="screenCondition-tablets" value="10"> Lightly used<br>
-            <input type="radio" name="screenCondition-tablets" value="25"> Scratched<br>
-            <input type="radio" name="screenCondition-tablets" value="50"> Cracked<br>
-            
-            <h3>Does your product turn on and function normally?</h3>
-            <input type="radio" name="functionality-tablets" value="0"> Yes<br>
-            <input type="radio" name="functionality-tablets" value="50"> No<br>
-            
-            <button onclick="calculateTradeIn('tablets')">Calculate Trade-in</button>
-            <p id="tradeInValue-tablets"></p>
+            // Show the form and reset it
+            tradeInForm.classList.remove('hidden');
+            resetForm();
+        });
+    });
 
-            <!-- OKAY button to close the form after calculation -->
-        <button id="okayButton-tablets" style="display: none;" onclick="closePopup('tabletsPopup')">OKAY</button>
-        </div>
-    </div>
-
-    <div id="smartphonesPopup" class="popup">
-        <span class="close" onclick="closePopup('smartphonesPopup')">&times;</span>
-        <h2>Get your estimate trade-in value in 3 simple steps</h2>
-        <p>Estimated value is inclusive of additional trade-in support</p>
-        <button onclick="showModelDropdown('smartphones')">Choose your model</button>
-        <div id="modelDropdown-smartphones" style="display: none;">
-            <select id="deviceModel-smartphones" onchange="showConditionForm('smartphones')">
-                <option value="">Select Model</option>
-                <option value="Lenovo">Lenovo</option>
-                <option value="Dell">Dell</option>
-                <option value="HP">HP</option>
-            </select>
-            <select id="deviceModel-smartphones" onchange="showConditionForm('smartphones')">
-                <option value="">Select Brand</option>
-                <option value="Lenovo">Lenovo</option>
-                <option value="Dell">Dell</option>
-                <option value="HP">HP</option>
-            </select>
-        </div>
-        <div id="conditionForm-smartphones" style="display: none;">
-            <h3>What is the condition of your product's body?</h3>
-            <input type="radio" name="bodyCondition-smartphones" value="100"> Looks like new<br>
-            <input type="radio" name="bodyCondition-smartphones" value="85"> Lightly used<br>
-            <input type="radio" name="bodyCondition-smartphones" value="60"> Scratched or dents<br>
-            <input type="radio" name="bodyCondition-smartphones" value="30"> Cracked<br>
-            
-            <h3>What is the condition of your screen?</h3>
-            <input type="radio" name="screenCondition-smartphones" value="0"> Looks like new<br>
-            <input type="radio" name="screenCondition-smartphones" value="10"> Lightly used<br>
-            <input type="radio" name="screenCondition-smartphones" value="25"> Scratched<br>
-            <input type="radio" name="screenCondition-smartphones" value="50"> Cracked<br>
-            
-            <h3>Does your product turn on and function normally?</h3>
-            <input type="radio" name="functionality-smartphones" value="0"> Yes<br>
-            <input type="radio" name="functionality-smartphones" value="50"> No<br>
-            
-            <button onclick="calculateTradeIn('smartphones')">Calculate Trade-in</button>
-            <p id="tradeInValue-smartphones"></p>
-
-            <!-- OKAY button to close the form after calculation -->
-        <button id="okayButton-smartphones" style="display: none;" onclick="closePopup('smartphonesPopup')">OKAY</button>
-        </div>
-    </div>
-
-
-    <script>
-        function showPopup(id) {
-            document.getElementById(id).style.display = 'block';
-        }
-    
-        function closePopup(id) {
-            document.getElementById(id).style.display = 'none';
-        }
-    
-        function showModelDropdown(type) {
-            document.getElementById(`modelDropdown-${type}`).style.display = 'block';
-        }
-    
-        function showConditionForm(type) {
-            document.getElementById(`conditionForm-${type}`).style.display = 'block';
-        }
-    
-        function calculateTradeIn(type) {
-            let baseValue = 1000;
-            
-            // Get values from the radio buttons for body, screen, and functionality conditions
-            let bodyCondition = document.querySelector(`input[name="bodyCondition-${type}"]:checked`)?.value || 100;
-            let screenCondition = document.querySelector(`input[name="screenCondition-${type}"]:checked`)?.value || 0;
-            let functionality = document.querySelector(`input[name="functionality-${type}"]:checked`)?.value || 0;
-    
-            // Calculate trade-in value considering body, screen, and functionality conditions
-            let tradeInValue = baseValue * (bodyCondition / 100) + screenCondition - functionality;
-            document.getElementById(`tradeInValue-${type}`).innerText = `Estimated Trade-In Value: $${tradeInValue.toFixed(2)}`;
-    
-        //     // Show the OKAY button after calculation
-        //     document.getElementById(`okayButton-${type}`).style.display = 'block';
-        // }
-
-        let okayButton = document.getElementById(`okayButton-${type}`);
-        if (okayButton) {
-            console.log(`Showing OKAY button for ${type}`);
-            okayButton.style.display = 'block';
-        } else {
-            console.error(`OKAY button not found for ${type}`);
-        }
+    // Populate the model dropdown
+    function populateModelDropdown(type) {
+        deviceModelSelect.innerHTML = '<option value="">Select a model...</option>';
+        const models = TRADE_IN_VALUES[type];
+        models.forEach(model => {
+            const option = document.createElement('option');
+            option.value = model.baseValue;
+            option.textContent = model.name;
+            deviceModelSelect.appendChild(option);
+        });
     }
 
-    </script>
-    
+    // Handle model selection
+    deviceModelSelect.addEventListener('change', (e) => {
+        selectedDeviceModel = parseFloat(e.target.value);
+        // Reset the value display and show questions
+        tradeInValueDisplay.classList.add('hidden');
+    });
+
+    // Handle calculate button click
+    calculateBtn.addEventListener('click', () => {
+        if (!selectedDeviceModel) {
+            alert('Please select a device model first.');
+            return;
+        }
+
+        const bodyCondition = document.querySelector('input[name="bodyCondition"]:checked');
+        const screenCondition = document.querySelector('input[name="screenCondition"]:checked');
+        const functionality = document.querySelector('input[name="functionality"]:checked');
+
+        if (!bodyCondition || !screenCondition || !functionality) {
+            alert('Please answer all condition questions to get an estimate.');
+            return;
+        }
+
+        let finalValue = selectedDeviceModel;
+        const bodyValue = parseFloat(bodyCondition.value);
+        const screenDeduction = parseFloat(screenCondition.value);
+        const functionalityDeduction = parseFloat(functionality.value);
+
+        // Calculate deductions
+        finalValue = finalValue * (bodyValue / 100);
+        finalValue = finalValue - screenDeduction;
+        finalValue = finalValue - functionalityDeduction;
+
+        // Ensure value doesn't go below zero
+        finalValue = Math.max(0, finalValue);
+
+        // Display the final value
+        valueDisplay.textContent = `R${finalValue.toFixed(2)}`;
+        tradeInValueDisplay.classList.remove('hidden');
+    });
+
+    // Function to reset the form's state
+    function resetForm() {
+        deviceModelSelect.selectedIndex = 0;
+        tradeInValueDisplay.classList.add('hidden');
+        document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+    }
+</script>
+
 </body>
 </html>

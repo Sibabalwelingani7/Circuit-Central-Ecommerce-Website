@@ -1,161 +1,134 @@
-C<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circuit Central Login</title>
-    <link rel="stylesheet" href="style.css">
-    <script>
-        function handleLogin(event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const email = document.getElementById('email').value;
-            alert(`Logging in with Username: ${username}, Email: ${email}`);
-            
-            // Simulate authentication success (Redirect to dashboard)
-            window.location.href = "dashboard.html";
-        }
-
-        function loginWithGoogle() {
-            alert("Redirecting to Google login...");
-            window.location.href = "https://accounts.google.com/signin";
-        }
-
-        function loginWithFacebook() {
-            alert("Redirecting to Facebook login...");
-            window.location.href = "https://www.facebook.com/login";
-        }
-    </script>
-    <style>
-        body {
-            background: linear-gradient(to right, #0F0F0F, #1A1A2E);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            color: #FFFFFF;
-        }
-        .login-container {
-            background: rgba(30, 30, 40, 0.9);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0px 5px 15px rgba(0, 255, 255, 0.2);
-            width: 400px;
-            text-align: center;
-        }
-        .login-box h2 {
-            color: #00FFFF;
-            font-size: 26px;
-            margin-bottom: 20px;
-        }
-        .login-box input {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            background: #222;
-            color: white;
-            outline: none;
-        }
-        .login-box input::placeholder {
-            color: #888;
-        }
-        .forgot-password a {
-            color: #00FFFF;
-            text-decoration: none;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-        .forgot-password a:hover {
-            text-decoration: underline;
-        }
-        .or-divider {
-            margin: 15px 0;
-            font-size: 14px;
-            color: #aaa;
-        }
-        .login-box button {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .login-btn {
-            background: #00FFFF;
-            color: #000;
-        }
-        .login-btn:hover {
-            background: #00CCCC;
-        }
-        .social-login button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .google {
-            background: #DB4437;
-            color: white;
-        }
-        .facebook {
-            background: #3B5998;
-            color: white;
-        }
-        .google:hover {
-            background: #C1351D;
-        }
-        .facebook:hover {
-            background: #2E4372;
-        }
-        .social-login img {
-            width: 20px;
-            height: 20px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Circuit Central | Login</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f1f5f9; /* slate-100 */
+  }
+  .modal {
+    display: none;
+  }
+</style>
 </head>
-<body>
-    <div class="login-container">
-        <div class="login-box">
-            <h2>Sign in to Circuit Central</h2>
-            <form onsubmit="handleLogin(event)">
-                <input type="text" id="username" name="username" placeholder="Username" required>
-                <input type="email" id="email" name="email" placeholder="Email" required>
-                <input type="password" id="password" name="password" placeholder="Password" required>
-                <div class="forgot-password">
-                    <a href="#">Forgot password?</a>
-                </div>
-                <button type="submit" class="login-btn">Sign In</button>
-            </form>
-            <div class="or-divider">OR</div>
-            <div class="social-login">
-                <button class="google" onclick="loginWithGoogle()">
-                    <img src="img/Googs.png" alt="Google Icon">
- Sign in With Google
-                </button>
-                <button class="facebook" onclick="loginWithFacebook()">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook"> Sign in With Facebook
-                </button>
-            </div>
-        </div>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+<div class="login-container bg-white p-8 rounded-2xl shadow-xl w-full max-w-md mx-4">
+  <div class="text-center mb-8">
+        <div class="flex items-center justify-center space-x-2 mb-4">
+        <img src="img/final_logo.png" alt="Circuit Central Logo" class="w-12 h-12 rounded-full">
+        <h1 class="text-3xl font-extrabold text-gray-900">Circuit Central</h1>
     </div>
+    
+    <p class="text-gray-500">Sign in to your account</p>
+  </div>
+  
+  <form id="loginForm" class="space-y-6">
+    <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+        <input type="email" id="email" name="email" required autocomplete="email" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500 text-sm">
+    </div>
+    <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+        <input type="password" id="password" name="password" required autocomplete="current-password" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500 text-sm">
+    </div>
+    <div class="flex items-center justify-between text-sm">
+        <div class="flex items-center">
+        <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+        <label for="remember-me" class="ml-2 block text-gray-900">Remember me</label>
+        </div>
+        <a href="#" class="font-medium text-green-600 hover:text-green-500">Forgot your password?</a>
+    </div>
+    <div>
+        <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-xl shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Sign In</button>
+    </div>
+  </form>
+
+  <div class="relative mt-8">
+    <div class="absolute inset-0 flex items-center">
+        <div class="w-full border-t border-gray-300"></div>
+    </div>
+    <div class="relative flex justify-center text-sm">
+        <span class="bg-white px-2 text-gray-500">Or continue with</span>
+    </div>
+  </div>
+
+  <div class="mt-6 grid grid-cols-2 gap-3">
+    <div>
+        <button onclick="loginWithGoogle()" class="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-xl shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+        <i class="fab fa-google text-lg mr-2"></i>Google
+        </button>
+    </div>
+    <div>
+        <button onclick="loginWithFacebook()" class="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-xl shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+        <i class="fab fa-facebook text-lg mr-2"></i>Facebook
+        </button>
+    </div>
+  </div>
+
+  <div class="mt-6 text-center text-sm text-gray-500">
+    Not a member?
+    <a href="#" class="font-medium text-green-600 hover:text-green-500">Sign up now</a>
+  </div>
+</div>
+
+<div id="messageModal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50">
+  <div class="modal-content bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
+    <div class="text-center">
+        <p id="modalMessage" class="text-lg font-semibold mb-4"></p>
+        <button onclick="closeModal()" class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">OK</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const loginForm = document.getElementById('loginForm');
+  const messageModal = document.getElementById('messageModal');
+  const modalMessage = document.getElementById('modalMessage');
+
+  // Show custom modal message
+  function showModal(message) {
+    modalMessage.textContent = message;
+    messageModal.style.display = 'flex';
+  }
+
+  // Hide custom modal
+  function closeModal() {
+    messageModal.style.display = 'none';
+  }
+
+  // Handle form submission
+  loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    
+    showModal(`Attempting to sign in with email: ${email}`);
+
+    // Simulate an API call
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    showModal("Sign-in successful! Redirecting...");
+
+    // In a real app, you would redirect after a successful API response
+    setTimeout(() => {
+        window.location.href = "index.html";
+    }, 1500);
+  });
+  
+  // Handle social logins (just for demonstration)
+  function loginWithGoogle() {  
+    showModal("Redirecting to Google for sign-in...");
+}
+
+  function loginWithFacebook() {
+    showModal("Redirecting to Facebook for sign-in...");
+  }
+</script>
+
 </body>
 </html>
-
-    

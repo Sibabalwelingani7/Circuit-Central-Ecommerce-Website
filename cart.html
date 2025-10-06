@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Circuit Central | Shopping Cart</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <style>
+/*Custom styles to override or add to Tailwind */
+body {
+font-family: 'Inter', sans-serif;
+background-color: #D1FAE5; 
+}
+.nav-link {
+transition: color 0.3s ease;
+ font-weight: 500;
+}
+.nav-link:hover {
+ color: #10B981; /* Tailwind's emerald-500 */
+}
+.nav-link.active {
+ color: #047857; /* Tailwind's emerald-700 */
+ font-weight: 600;
+}
+.product-card:hover .add-to-cart-btn {
+ transform: translateY(0);
+ opacity: 1;
+}
+.quantity-control::-webkit-inner-spin-button, 
+.quantity-control::-webkit-outer-spin-button { 
+ -webkit-appearance: none; 
+ margin: 0; 
+}
+.quantity-control {
+ -moz-appearance: textfield;
+}
+.checkout-btn {
+ transition: all 0.3s ease;
+}
+ </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <header id="header" class="bg-white shadow-md py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 z-50 rounded-b-lg">
+  <div class="flex items-center">
+    <img src="img/final_logo.png" alt="Circuit Central Logo" class="w-12 h-12 rounded-full mr-3">
+    
+  <h1 class="text-3xl font-bold text-gray-900">Circuit Central</h1>
+  </div>
+  <nav>
+  <ul id="navbar" class="hidden md:flex space-x-8">
+    <li><a class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 relative group" href="index.html">Home<span class="absolute inset-x-0 bottom-0 h-0.5 bg-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+    <li><a class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 relative group" href="Shop.html">Shop<span class="absolute inset-x-0 bottom-0 h-0.5 bg-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+    <li><a class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 relative group" href="Promos.html">Promos<span class="absolute inset-x-0 bottom-0 h-0.5 bg-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+    <li><a class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 relative group" href="Tradein.html">Trade In<span class="absolute inset-x-0 bottom-0 h-0.5 bg-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+    <li><a class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 relative group" href="My Account.html">My Account<span class="absolute inset-x-0 bottom-0 h-0.5 bg-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+    <li><a class="text-gray-700 hover:text-green-600 transition-colors duration-300" href="cart.html"><i class="fas fa-shopping-cart text-xl"></i></a></li>
+  </ul>
+    <div class="md:hidden">
+    <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+    <i class="fas fa-bars text-2xl"></i>
+    </button>
+  </div>
+  </nav>
+  </header>
+
+  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-4 px-6 rounded-b-lg">
+  <ul class="flex flex-col space-y-4">
+  <li><a class="block text-gray-700 hover:text-green-600 font-medium py-2" href="index.html">Home</a></li>
+  <li><a class="block text-gray-700 hover:text-green-600 font-medium py-2" href="Shop.html">Shop</a></li>
+  <li><a class="block text-gray-700 hover:text-green-600 font-medium py-2" href="Promos.html">Promos</a></li>
+  <li><a class="block text-gray-700 hover:text-green-600 font-medium py-2" href="Tradein.htmll">Trade In</a></li>
+  <li><a class="block text-gray-700 hover:text-green-600 font-medium py-2" href="My Account.html">My Account</a></li>
+  <li><a class="block text-gray-700 hover:text-green-600 py-2" href="cart.html"><i class="fas fa-shopping-cart text-xl mr-2"></i>Cart</a></li>
+  </ul>
+  </div>
+
+<main class="container mx-auto px-4 py-12">
+ <div class="flex flex-col lg:flex-row gap-8">
+   <div class="lg:w-2/3 bg-white p-6 rounded-lg shadow-md">
+ <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Your Shopping Cart</h2>
+ <div id="cart-items" class="space-y-6">
+  </div>
+</div>
+
+   <div class="lg:w-1/3 bg-white p-6 rounded-lg shadow-md h-fit">
+ <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">Order Summary</h2>
+ <div class="flex justify-between items-center mb-4 text-lg">
+   <span>Subtotal</span>
+   <span id="cart-subtotal" class="font-semibold">R0.00</span>
+ </div>
+ <div class="flex justify-between items-center mb-4 text-lg border-b pb-4">
+   <span>Shipping</span>
+   <span id="cart-shipping" class="font-semibold text-green-600">Free</span>
+ </div>
+ <div class="flex justify-between items-center mb-6 text-2xl font-bold text-gray-900">
+   <span>Total</span>
+   <span id="cart-total">R0.00</span>
+ </div>
+ <button id="checkout-btn" class="w-full py-4 rounded-xl text-white text-lg font-semibold bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+   Proceed to Checkout
+ </button>
+ <a href="shop.html" class="block w-full text-center mt-4 text-sm text-green-600 hover:text-green-700 font-semibold">
+   Continue Shopping
+ </a>
+</div>
+ </div>
+</main>
+
+  <footer class="bg-gray-900 text-gray-300 py-12 px-6 md:px-12 rounded-t-lg">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div class="col-span-1">
+    <h4 class="text-xl font-bold text-white mb-4">Circuit Central</h4>
+    <p class="text-sm"><strong>Address:</strong> 123 Tech Lane, Innovation City, 7700</p>
+    <p class="text-sm"><strong>Phone:</strong> +27 21 123 4567</p>
+    <p class="text-sm"><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+    <div class="social-icons mt-4 flex space-x-4">
+    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
+    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-twitter text-xl"></i></a>
+    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-instagram text-xl"></i></a>
+    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-pinterest-p text-xl"></i></a>
+    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-youtube text-xl"></i></a>
+    </div>
+  </div>
+
+    <div class="col-span-1">
+    <h4 class="text-xl font-bold text-white mb-4">About</h4>
+    <ul class="space-y-2">
+    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">About Us</a></li>
+    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">Delivery Information</a></li>
+    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">Privacy Policy</a></li>
+    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">Terms & Conditions</a></li>
+    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">Contact Us</a></li>
+    </ul>
+  </div>
+
+    <div class="col-span-1">
+    <h4 class="text-xl font-bold text-white mb-4">My Account</h4>
+    <ul class="space-y-2">
+    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">Sign In</a></li>
+    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">View Cart</a></li>
+    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">My Wishlist</a></li>
+    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">Track My Order</a></li>
+    <li><a href="#" class="text-sm hover:text-white transition-colors duration-300">Help</a></li>
+    </ul>
+  </div>
+
+    <div class="col-span-1">
+    <h4 class="text-xl font-bold text-white mb-4">Install App</h4>
+    <p class="text-sm mb-4">From App Store or Google Play</p>
+    <div class="flex flex-col space-y-3">
+                    <img src="https://i.pinimg.com/736x/be/78/2e/be782e3668252914e7550183710d1a20.jpg" alt="App Store" class="rounded-lg shadow-md">
+                    <img src="https://i.pinimg.com/1200x/f3/7d/a4/f37da494b60e3b7ed6e3e08a1ddba2fa.jpg" alt="Google Play" class="rounded-lg shadow-md">
+                </div>
+    <p class="text-sm mt-4">Secured Payment Gateways</p>
+    <img src="https://placehold.co/200x50/333333/FFFFFF?text=Payment+Options" alt="Payment Options" class="mt-2 rounded-lg shadow-md">
+  </div>
+  </div>
+  <div class="text-center text-gray-500 text-sm mt-12 pt-8 border-t border-gray-700">
+  <p>&copy; 2025 Circuit Central. All rights reserved.</p>
+  </div>
+  </footer>
+
+<script>
+// Mock data is not needed here; the cart relies on localStorage.
+// const MOCK_PRODUCTS = []; 
+
+// ----------------------
+// Cart Management Functions
+// ----------------------
+
+// Function to get the cart from localStorage
+function getCart() {
+ const cart = localStorage.getItem('cart');
+ return cart ? JSON.parse(cart) : [];
+}
+
+// Function to save the cart to localStorage
+function saveCart(cart) {
+ localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Function to remove an item from the cart
+function removeItem(productId) {
+ const cart = getCart();
+ const updatedCart = cart.filter(item => item.id !== productId);
+ saveCart(updatedCart);
+ renderCart();
+ updateCartIcon(); // Added to refresh icon count on removal
+}
+
+// Function to update item quantity
+function updateQuantity(productId, newQuantity) {
+ const cart = getCart();
+ const item = cart.find(item => item.id === productId);
+ const quantity = Math.max(1, parseInt(newQuantity) || 1);
+
+ if (item && item.quantity !== quantity) {
+item.quantity = quantity;
+saveCart(cart);
+renderCart();
+updateCartIcon(); // Added to refresh icon count on quantity change
+ }
+}
+
+/* // ----------------------
+// Rendering Functions
+// ----------------------
+
+// Renders the items in the cart on the cart page */
+function renderCart() {
+ const cart = getCart();
+ const cartItemsContainer = document.getElementById('cart-items');
+ const cartSubtotalElement = document.getElementById('cart-subtotal');
+ const cartTotalElement = document.getElementById('cart-total');
+
+ cartItemsContainer.innerHTML = '';
+ let subtotal = 0;
+
+ if (cart.length === 0) {
+cartItemsContainer.innerHTML = `
+ <div class="text-center py-10">
+   <i class="fas fa-shopping-cart text-6xl text-gray-300 mb-4"></i>
+   <p class="text-gray-500 text-lg">Your cart is currently empty.</p>
+ </div>
+`;
+ } else {
+cart.forEach(item => {
+ // Ensure quantity is a number and at least 1 for calculation
+ const quantity = item.quantity > 0 ? item.quantity : 1; 
+ const itemPrice = item.price * quantity;
+ subtotal += itemPrice;
+
+ const itemDiv = document.createElement('div');
+ itemDiv.className = 'flex items-center gap-4 border-b border-gray-200 py-4';
+ itemDiv.innerHTML = `
+   <img src="${item.image}" alt="${item.name}" class="w-20 h-20 object-cover rounded-lg shadow-sm">
+   <div class="flex-grow">
+  <h3 class="font-semibold text-lg">${item.name}</h3>
+  <p class="text-gray-500">R${item.price.toFixed(2)} each</p>
+   </div>
+   <div class="flex items-center gap-2">
+  <button onclick="updateQuantity(${item.id}, ${quantity - 1})" class="p-2 border rounded-md hover:bg-gray-100"><i class="fas fa-minus text-sm"></i></button>
+  <span class="w-8 text-center">${quantity}</span>
+  <button onclick="updateQuantity(${item.id}, ${quantity + 1})" class="p-2 border rounded-md hover:bg-gray-100"><i class="fas fa-plus text-sm"></i></button>
+   </div>
+   <p class="font-bold text-lg w-20 text-right">R${itemPrice.toFixed(2)}</p>
+   <button onclick="removeItem(${item.id})" class="text-gray-400 hover:text-red-500">
+  <i class="fas fa-times"></i>
+   </button>
+ `;
+ cartItemsContainer.appendChild(itemDiv);
+});
+ }
+
+/*  // Update summary totals */
+ cartSubtotalElement.textContent = `R${subtotal.toFixed(2)}`;
+ cartTotalElement.textContent = `R${subtotal.toFixed(2)}`;
+}
+
+/* // Update the cart icon with the item count */
+function updateCartIcon() {
+ const cart = getCart();
+ const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+ 
+ // Select the cart icon link in the header
+ const desktopCartLink = document.querySelector('#navbar a[href="cart.html"]');
+ const mobileCartLink = document.querySelector('#mobile-menu a[href="cart.html"]');
+
+/*  // Helper to update a single link/icon */
+ const updateBadge = (link) => {
+if (!link) return;
+const cartIcon = link.querySelector('.fa-shopping-cart');
+let badge = link.querySelector('.cart-badge');
+
+if (totalItems > 0) {
+ if (!badge) {
+  badge = document.createElement('span');
+  // Note: You may need to adjust this class if the mobile icon is styled differently
+  badge.className = 'cart-badge absolute -top-2 -right-2 text-xs text-white bg-red-500 rounded-full h-4 w-4 flex items-center justify-center';
+  link.style.position = 'relative'; // Ensure the link is relative for absolute badge
+  // Append the badge to the link, *not* the icon
+  link.appendChild(badge); 
+ }
+ badge.textContent = totalItems;
+ badge.style.display = 'flex';
+} else {
+ if (badge) {
+  badge.remove();
+ }
+}
+ };
+
+ updateBadge(desktopCartLink);
+ updateBadge(mobileCartLink);
+}
+
+/* // Attaching checkout logic to the button */
+document.getElementById('checkout-btn').addEventListener('click', () => {
+ const cart = getCart();
+ if (cart.length > 0) {
+// Ideally, the cart is cleared *after* a successful payment, but for this mock, we'll clear it here.
+localStorage.removeItem('cart'); 
+alert("Your order has been placed successfully! (Cart cleared)");
+// Redirect to a confirmation or payment page
+// For now, redirect to shop.html to show a clear cart and refresh the icon
+window.location.href = "shop.html";
+ } else {
+alert("Your cart is empty. Please add items before checking out.");
+ }
+});
+
+/* // Initialize the cart page */
+document.addEventListener('DOMContentLoaded', () => {
+ renderCart();
+ updateCartIcon();
+ // Add mobile menu toggle logic for cart.html as well
+ const mobileMenuButton = document.getElementById('mobile-menu-button');
+ const mobileMenu = document.getElementById('mobile-menu');
+ if (mobileMenuButton && mobileMenu) {
+mobileMenuButton.addEventListener('click', () => {
+ mobileMenu.classList.toggle('hidden');
+});
+ }
+});
+
+</script>
+</body>
+</html>

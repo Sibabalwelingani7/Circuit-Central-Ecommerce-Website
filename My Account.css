@@ -1,0 +1,110 @@
+/* Custom CSS for My Account Page */
+
+/* Base Styles (can be shared with other pages) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #D1FAE5; 
+    margin: 0; /* remove default spacing */
+    min-height: 100vh; /* make sure it covers full screen height */
+}
+
+/* Header and Navigation Links */
+.nav-link {
+    transition: color 0.3s ease;
+    font-weight: 500;
+    color: #4B5563; /* Tailwind gray-600 */
+}
+
+.nav-link:hover {
+    color: #10B981; /* Tailwind emerald-500 */
+}
+
+.nav-link.active {
+    color: #047857; /* Tailwind emerald-700 */
+    font-weight: 600;
+}
+
+.mobile-link {
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    color: #4B5563;
+}
+
+.mobile-link:hover {
+    color: #10B981;
+}
+
+/* Button Styles */
+.btn-primary, .btn-secondary {
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #10B981; /* Emerald-500 */
+    color: white;
+    border: 2px solid #10B981;
+}
+
+.btn-primary:hover {
+    background-color: #059669; /* Emerald-600 */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #3B82F6; /* Blue-500 */
+    border: 2px solid #3B82F6;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.875rem; /* text-sm */
+    letter-spacing: 0;
+}
+.btn-secondary:hover {
+    background-color: #3B82F6;
+    color: white;
+}
+
+/* Account Dashboard Specific Styles */
+.dashboard-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    color: #4B5563; /* gray-600 */
+    transition: all 0.2s ease-in-out;
+    font-weight: 500;
+}
+
+.dashboard-link:hover {
+    background-color: #F3F4F6; /* gray-100 */
+    color: #10B981;
+}
+
+.dashboard-link.active {
+    background-color: #D1FAE5; /* green-100 */
+    color: #047857; /* green-700 */
+    font-weight: 600;
+}
+
+.section-heading {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #1F2937; /* gray-800 */
+    border-bottom: 2px solid #E5E7EB;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.account-section:not(:last-child) {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #E5E7EB;
+}

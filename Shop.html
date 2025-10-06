@@ -1,194 +1,1397 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circuit Central | Shop</title>
-    <!-- Tailwind CSS CDN -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circuit Central | Shop</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Inter font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Custom styles for the Inter font */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Custom button styles for hover effects */
-        .btn-primary {
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        /* Custom background for the shop hero section */
-        #shop-hero {
-            background-image: url('https://placehold.co/1920x400/0F2B48/FFFFFF?text=Browse+Our+Products');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white;
-        }
-    </style>
+  <style>
+    /* Custom styles for the Inter font */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    /* Custom button styles for hover effects */
+    .btn-primary {
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    /* Custom background for the shop hero section */
+    #shop-hero {
+      /* background-image: url('https://placehold.co/1920x400/0F2B48/FFFFFF?text=Browse+Our+Products'); */
+      background-image: url(/img/Cicuit.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-
-    <!-- Header Section -->
-    <header id="header" class="bg-white shadow-md py-8 px-6 md:px-12 flex justify-between items-center sticky top-0 z-50 rounded-b-lg">
-        <div class="flex items-center">
-            <!-- Placeholder for logo, replace with actual logo if available -->
-            <img src="https://placehold.co/50x50/E0E0E0/333333?text=Logo" alt="Circuit Central Logo" class="w-12 h-12 rounded-full mr-3">
-            <h1 class="text-3xl font-bold text-gray-900">Circuit Central</h1>
-        </div>
-        <nav>
-            <ul id="navbar" class="hidden md:flex space-x-8">
-                <li><a class="text-lg text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 relative group" href="#">Home<span class="absolute inset-x-0 bottom-0 h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
-                <li><a class="text-lg text-blue-600 font-bold transition-colors duration-300 relative group" href="#">Shop<span class="absolute inset-x-0 bottom-0 h-0.5 bg-blue-600 transform scale-x-100 transition-transform duration-300"></span></a></li>
-                <li><a class="text-lg text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 relative group" href="#">Promos<span class="absolute inset-x-0 bottom-0 h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
-                <li><a class="text-lg text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 relative group" href="#">PC's & Laptops<span class="absolute inset-x-0 bottom-0 h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
-                <li><a class="text-lg text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 relative group" href="#">My Account<span class="absolute inset-x-0 bottom-0 h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
-                <li><a class="text-gray-700 hover:text-blue-600 transition-colors duration-300" href="#"><i class="fas fa-shopping-cart text-xl"></i></a></li>
-            </ul>
-            <!-- Mobile menu button -->
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Mobile Menu (hidden by default) -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-4 px-6 rounded-b-lg">
-        <ul class="flex flex-col space-y-4">
-            <li><a class="block text-lg text-gray-700 hover:text-blue-600 font-medium py-2" href="#">Home</a></li>
-            <li><a class="block text-lg text-blue-600 font-bold py-2" href="#">Shop</a></li>
-            <li><a class="block text-lg text-gray-700 hover:text-blue-600 font-medium py-2" href="#">Promos</a></li>
-            <li><a class="block text-lg text-gray-700 hover:text-blue-600 font-medium py-2" href="#">PC's & Laptops</a></li>
-            <li><a class="block text-lg text-gray-700 hover:text-blue-600 font-medium py-2" href="#">My Account</a></li>
-            <li><a class="block text-lg text-gray-700 hover:text-blue-600 py-2" href="#"><i class="fas fa-shopping-cart text-xl mr-2"></i>Cart</a></li>
-        </ul>
+    <header id="header" class="bg-white shadow-md py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 z-50 rounded-b-lg">
+    <div class="flex items-center">
+            <img src="img/final_logo.png" alt="Circuit Central Logo" class="w-12 h-12 rounded-full mr-3">
+            
+      <h1 class="text-3xl font-bold text-gray-900">Circuit Central</h1>
     </div>
+    <nav>
+      <ul id="navbar" class="hidden md:flex space-x-8">
+        <li><a class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 relative group" href="index.html">Home<span class="absolute inset-x-0 bottom-0 h-0.5 bg-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+        <li><a class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 relative group" href="Shop.html">Shop<span class="absolute inset-x-0 bottom-0 h-0.5 bg-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+        <li><a class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 relative group" href="Promos.html">Promos<span class="absolute inset-x-0 bottom-0 h-0.5 bg-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+        <li><a class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 relative group" href="Tradein.html">Trade In<span class="absolute inset-x-0 bottom-0 h-0.5 bg-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+        <li><a class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 relative group" href="My Account.html">My Account<span class="absolute inset-x-0 bottom-0 h-0.5 bg-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+        <li><a class="text-gray-700 hover:text-green-600 transition-colors duration-300" href="cart.html"><i class="fas fa-shopping-cart text-xl"></i></a></li>
+      </ul>
+            <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
 
-    <!-- Main Content Area -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-4 px-6 rounded-b-lg">
+    <ul class="flex flex-col space-y-4">
+      <li><a class="block text-gray-700 hover:text-green-600 font-medium py-2" href="index.html">Home</a></li>
+      <li><a class="block text-gray-700 hover:text-green-600 font-medium py-2" href="Shop.html">Shop</a></li>
+      <li><a class="block text-gray-700 hover:text-green-600 font-medium py-2" href="Promos.html">Promos</a></li>
+      <li><a class="block text-gray-700 hover:text-green-600 font-medium py-2" href="Tradein.htmll">Trade In</a></li>
+      <li><a class="block text-gray-700 hover:text-green-600 font-medium py-2" href="My Account.html">My Account</a></li>
+      <li><a class="block text-gray-700 hover:text-green-600 py-2" href="cart.html"><i class="fas fa-shopping-cart text-xl mr-2"></i>Cart</a></li>
+    </ul>
+  </div>
+
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-4 px-6 rounded-b-lg">
+    <ul class="flex flex-col space-y-4">
+      <li><a class="block text-lg text-gray-700 hover:text-green-600 font-medium py-2" href="index.html">Home</a></li>
+      <li><a class="block text-lg text-green-600 font-bold py-2" href="Shop.html">Shop</a></li>
+      <li><a class="block text-lg text-gray-700 hover:text-green-600 font-medium py-2" href="Promos.html">Promos</a></li>
+      <li><a class="block text-lg text-gray-700 hover:text-green-600 font-medium py-2" href="PC's & Laptops.html">PC's & Laptops</a></li>
+      <li><a class="block text-lg text-gray-700 hover:text-green-600 font-medium py-2" href="My Account.html">My Account</a></li>
+      <li><a class="block text-lg text-gray-700 hover:text-green-600 py-2" href="cart.html"><i class="fas fa-shopping-cart text-xl mr-2"></i>Cart</a></li>
+    </ul>
+  </div>
+
     <main>
 
-        <!-- Shop Hero Section -->
-        <section id="shop-hero" class="py-24 px-6 md:px-12 text-center rounded-b-lg">
-            <h1 class="text-5xl font-extrabold text-white drop-shadow-lg">#stayhome</h1>
-            <p class="text-xl text-gray-200 mt-4 drop-shadow-md">Save more with coupons & up to 70% off!</p>
-        </section>
+    <br>
+    <br>
+    <h2 class="text-5xl font-bold text-center mb-4">Our Full Shop</h2>
+    <p class="text-center text-gray-600 mb-12">Browse all our products from desktops to laptops and more!</p>
 
-        <!-- Product Grid Section -->
-        <section id="product-grid" class="py-16 px-6 md:px-12 bg-white rounded-lg shadow-md mx-4 md:mx-auto my-8 max-w-7xl">
-            <!-- Filter & Sort Bar -->
-            <div class="flex flex-col sm:flex-row justify-between items-center mb-12">
-                <h2 class="text-4xl font-bold mb-4 sm:mb-0">All Products</h2>
-                <div class="flex items-center space-x-4">
-                    <label for="sort" class="text-gray-700">Sort by:</label>
-                    <select id="sort" class="bg-gray-100 p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <option value="featured">Featured</option>
-                        <option value="price-asc">Price: Low to High</option>
-                        <option value="price-desc">Price: High to Low</option>
-                        <option value="name-asc">Name: A-Z</option>
-                    </select>
+      <section id="product-grid" class="py-16 px-6 md:px-12 bg-gray-50 rounded-lg shadow-md border border-gray-200 mx-4 md:mx-auto my-8 max-w-7xl">
+
+        <div class="flex flex-col sm:flex-row justify-between items-center mb-12">
+      <h2 class="text-4xl font-bold mb-4 sm:mb-0">All Products (<span id="product-count">68</span>)</h2>
+      <div class="flex items-center space-x-4">
+        <label for="sort" class="text-gray-700">Sort by:</label>
+        <select id="sort" class="bg-gray-100 p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="name-asc">Name: A-Z</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="laptop-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                              
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+        <img src="https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fERlbGwlMjBMYXB0b3B8ZW58MHx8MHx8fDA%3D" alt="HP Laptop" class="w-full h-48 object-cover rounded-t-xl">
+        <div class="p-5">
+          <span class="text-gray-500 text-sm">HP</span>
+          <h5 class="text-xl font-semibold mt-2 mb-1">HP Spectre x360</h5>
+          <div class="star flex text-yellow-400 mb-3">
+            <i class="fas fa-star text-sm"></i>
+            <i class="fas fa-star text-sm"></i>
+            <i class="fas fa-star text-sm"></i>
+            <i class="fas fa-star-half-alt text-sm"></i>
+            <i class="far fa-star text-sm"></i>
+          </div>
+          <h4 class="text-2xl font-bold text-green-600">R18,000</h4>
+        </div>
+        <a href="#" onclick="addToCart(101)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+      </div>
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fEhQJTIwTGFwdG9wfGVufDB8fDB8fHww" alt="HP Laptop" class="w-full h-48 object-cover rounded-t-xl">
+        <div class="p-5">
+          <span class="text-gray-500 text-sm">HP</span>
+          <h5 class="text-xl font-semibold mt-2 mb-1">HP Envy 13</h5>
+          <div class="star flex text-yellow-400 mb-3">
+            <i class="fas fa-star text-sm"></i>
+            <i class="fas fa-star text-sm"></i>
+            <i class="fas fa-star text-sm"></i>
+            <i class="fas fa-star text-sm"></i>
+            <i class="far fa-star text-sm"></i>
+          </div>
+          <h4 class="text-2xl font-bold text-green-600">R15,500</h4>
+        </div>
+        <a href="#" onclick="addToCart(102)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+      </div>
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+        <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="HP Elite SFF 600" class="w-full h-48 object-cover rounded-t-xl">
+        <div class="p-5">
+          <span class="text-gray-500 text-sm">HP</span>
+          <h5 class="text-xl font-semibold mt-2 mb-1">HP Elite SFF 600</h5>
+          <div class="star flex text-yellow-400 mb-3">
+            <i class="fas fa-star text-sm mr-1"></i>
+            <i class="fas fa-star text-sm mr-1"></i>
+            <i class="fas fa-star text-sm mr-1"></i>
+            <i class="fas fa-star text-sm mr-1"></i>
+            <i class="fas fa-star text-sm"></i>
+          </div>
+          <h4 class="text-2xl font-bold text-green-600">R5000</h4>
+        </div>
+        <a href="#" onclick="addToCart(103)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+      </div>
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+        <img src="https://images.unsplash.com/photo-1588405765997-02255aff295a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fEhQJTIwTGFwdG9wfGVufDB8fDB8fHww" alt="HP Laptop" class="w-full h-48 object-cover rounded-t-xl">
+        <div class="p-5">
+          <span class="text-gray-500 text-sm">HP</span>
+          <h5 class="text-xl font-semibold mt-2 mb-1">HP EliteBook 840</h5>
+          <div class="star flex text-yellow-400 mb-3">
+            <i class="fas fa-star text-sm"></i>
+            <i class="fas fa-star text-sm"></i>
+            <i class="fas fa-star text-sm"></i>
+            <i class="fas fa-star text-sm"></i>
+            <i class="fas fa-star text-sm"></i>
+          </div>
+          <h4 class="text-2xl font-bold text-green-600">R20,000</h4>
+        </div>
+        <a href="#" onclick="addToCart(104)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+      </div>
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+        <img src="https://images.unsplash.com/photo-1618410316609-107c7f6d3756?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fEhQJTIwTGFwdG9wfGVufDB8fDB8fHww" alt="HP Laptop" class="w-full h-48 object-cover rounded-t-xl">
+        <div class="p-5">
+          <span class="text-gray-500 text-sm">HP</span>
+          <h5 class="text-xl font-semibold mt-2 mb-1">HP Omen 16</h5>
+          <div class="star flex text-yellow-400 mb-3">
+            <i class="fas fa-star text-sm"></i>
+            <i class="fas fa-star text-sm"></i>
+            <i class="fas fa-star text-sm"></i>
+            <i class="fas fa-star text-sm"></i>
+            <i class="fas fa-star text-sm"></i>
+          </div>
+          <h4 class="text-2xl font-bold text-green-600">R25,000</h4>
+        </div>
+        <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+      </div>
+      <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="HP Pro Tower 400" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">HP</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">HP Pro Tower 400</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R4330</h4>
                 </div>
+                <a href="#" onclick="addToCart(106)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+                        <i class="fas fa-shopping-cart text-lg"></i>
+                    </a>
+            </div>
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1622050756792-5b1180bbb873?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fEhQJTIwTGFwdG9wfGVufDB8fDB8fHww" alt="HP Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">HP</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">HP ZBook Studio</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R30,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- HP Laptop 8 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1618412659753-9fcb22e8f515?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fEhQJTIwTGFwdG9wfGVufDB8fDB8fHww" alt="HP Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">HP</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">HP Chromebook x360</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star-half-alt text-sm"></i>
+                        <i class="far fa-star text-sm"></i>
+                        <i class="far fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R8,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- HP Laptop 9 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <img src="https://images.unsplash.com/photo-1526657782461-9fe13402a841?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="HP Pro Tower 290 G9" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">HP</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">HP Pro Tower 290 G9</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R6000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- HP Laptop 10 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <img src="https://images.unsplash.com/photo-1602080858428-57174f9431cf?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="HP Omnibook X" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">HP</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">HP Omnibook X</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R4330</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- HP Laptop 11 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1551533257-19e98f46a429?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA4fHxIUCUyMExhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" alt="HP Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">HP</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">HP Dragonfly Folio</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star-half-alt text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R28,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- HP Laptop 12 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <img src="https://images.unsplash.com/photo-1504707748692-419802cf939d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="HP Laptop 15-fd0016ni" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">HP</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">HP Laptop 15-fd0016ni</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R6000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Product Card 1: Gaming PC -->
-                <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
-                    <img src="https://placehold.co/400x300/E0E0E0/333333?text=Gaming+PC" alt="Gaming PC" class="w-full h-48 object-cover rounded-t-xl">
-                    <div class="p-5">
-                        <span class="text-gray-500 text-sm">CUSTOM BUILD</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-1">High-Performance Gaming PC</h5>
-                        <div class="star flex text-yellow-400 mb-3">
-                            <i class="fas fa-star text-sm mr-1"></i>
-                            <i class="fas fa-star text-sm mr-1"></i>
-                            <i class="fas fa-star text-sm mr-1"></i>
-                            <i class="fas fa-star text-sm mr-1"></i>
-                            <i class="fas fa-star-half-alt text-sm"></i>
-                        </div>
-                        <h4 class="text-2xl font-bold text-blue-600">R15,000</h4>
+            <!-- Asus Laptops (12 total) -->
+            <!-- Asus Laptop 1 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1693206816374-c04522205b21?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fEFzdXMlMjBMYXB0b3B8ZW58MHx8MHx8fDA%3D" alt="Asus Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ASUS</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Asus ROG Zephyrus G14</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
                     </div>
-                    <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
-                        <i class="fas fa-shopping-cart text-lg"></i>
-                    </a>
+                    <h4 class="text-2xl font-bold text-green-600">R28,000</h4>
                 </div>
-
-                <!-- Product Card 2: Workstation PC -->
-                <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
-                    <img src="https://placehold.co/400x300/E0E0E0/333333?text=Workstation+PC" alt="Workstation PC" class="w-full h-48 object-cover rounded-t-xl">
-                    <div class="p-5">
-                        <span class="text-gray-500 text-sm">CUSTOM BUILD</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-1">Professional Workstation PC</h5>
-                        <div class="star flex text-yellow-400 mb-3">
-                            <i class="fas fa-star text-sm mr-1"></i>
-                            <i class="fas fa-star text-sm mr-1"></i>
-                            <i class="fas fa-star text-sm mr-1"></i>
-                            <i class="fas fa-star text-sm mr-1"></i>
-                            <i class="fas fa-star text-sm"></i>
-                        </div>
-                        <h4 class="text-2xl font-bold text-blue-600">R12,500</h4>
-                    </div>
-                    <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
-                        <i class="fas fa-shopping-cart text-lg"></i>
-                    </a>
-                </div>
-
-                <!-- Product Card 3: Ultrabook -->
-                <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
-                    <img src="https://placehold.co/400x300/E0E0E0/333333?text=Ultrabook" alt="Ultrabook" class="w-full h-48 object-cover rounded-t-xl">
-                    <div class="p-5">
-                        <span class="text-gray-500 text-sm">LAPTOP</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-1">Lightweight Ultrabook</h5>
-                        <div class="star flex text-yellow-400 mb-3">
-                            <i class="fas fa-star text-sm mr-1"></i>
-                            <i class="fas fa-star text-sm mr-1"></i>
-                            <i class="fas fa-star text-sm mr-1"></i>
-                            <i class="fas fa-star text-sm mr-1"></i>
-                            <i class="far fa-star text-sm"></i>
-                        </div>
-                        <h4 class="text-2xl font-bold text-blue-600">R9,000</h4>
-                    </div>
-                    <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
-                        <i class="fas fa-shopping-cart text-lg"></i>
-                    </a>
-                </div>
-
-                <!-- Product Card 4: Standard Laptop -->
-                <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
-                    <img src="https://placehold.co/400x300/E0E0E0/333333?text=Standard+Laptop" alt="Standard Laptop" class="w-full h-48 object-cover rounded-t-xl">
-                    <div class="p-5">
-                        <span class="text-gray-500 text-sm">LAPTOP</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-1">All-Purpose Laptop</h5>
-                        <div class="star flex text-yellow-400 mb-3">
-                            <i class="fas fa-star text-sm mr-1"></i>
-                            <i class="fas fa-star text-sm mr-1"></i>
-                            <i class="fas fa-star text-sm mr-1"></i>
-                            <i class="fas fa-star text-sm"></i>
-                            <i class="far fa-star text-sm"></i>
-                        </div>
-                        <h4 class="text-2xl font-bold text-blue-600">R6,500</h4>
-                    </div>
-                    <a href="#" class="absolute bottom-4 right-4 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors duration-300">
-                        <i class="fas fa-shopping-cart text-lg"></i>
-                    </a>
-                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
             </div>
-        </section>
+            <!-- Asus Laptop 2 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1693206816304-642a705045a1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fEFzdXMlMjBMYXB0b3B8ZW58MHx8MHx8fDA%3D" alt="Asus Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ASUS</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Asus ZenBook Pro Duo</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star-half-alt text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R25,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Asus Laptop 3 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1636211992838-251a43d72ad2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8QXN1cyUyMExhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" alt="Asus Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ASUS</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Asus TUF Gaming F15</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="far fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R20,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Asus Laptop 4 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1636211990414-8edec17ba047?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QXN1cyUyMExhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" alt="Asus Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ASUS</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Asus Vivobook 15</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star-half-alt text-sm"></i>
+                        <i class="far fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R10,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Asus Laptop 5 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1636211989567-fd3ada526ea0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fEFzdXMlMjBMYXB0b3B8ZW58MHx8MHx8fDA%3D" alt="Asus Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ASUS</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Asus Chromebook Flip C434</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star-half-alt text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R9,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Asus Laptop 6 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1645385890999-43dcd4f4a703?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTl8fEFzdXMlMjBMYXB0b3B8ZW58MHx8MHx8fDA%3D" alt="Asus Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ASUS</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Asus ZenBook 14</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R17,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Asus Laptop 7 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1654267288787-a571aecf0505?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fEFzdXMlMjBMYXB0b3B8ZW58MHx8MHx8fDA%3D" alt="Asus Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ASUS</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Asus ROG Strix Scar 17</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R32,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Asus Laptop 8 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1637250046663-a6e60170f044?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzl8fEFzdXMlMjBMYXB0b3B8ZW58MHx8MHx8fDA%3D" alt="Asus Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ASUS</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Asus ExpertBook B9</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R29,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Asus Laptop 9 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1544239265-ee5eedde5469?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODR8fEFzdXMlMjBMYXB0b3B8ZW58MHx8MHx8fDA%3D" alt="Asus Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ASUS</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Asus ZenBook S UX393</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="far fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R21,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Asus Laptop 10 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1544731612-de7f96afe55f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODZ8fEFzdXMlMjBMYXB0b3B8ZW58MHx8MHx8fDA%3D" alt="Asus Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ASUS</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Asus Vivobook Flip 14</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star-half-alt text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R11,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Asus Laptop 11 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1657936412057-67a8bb0a04a8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA3fHxBc3VzJTIwTGFwdG9wfGVufDB8fDB8fHww" alt="Asus Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ASUS</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Asus ROG Flow X13</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R30,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Asus Laptop 12 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1637552481610-154c687c7db9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTEwfHxBc3VzJTIwTGFwdG9wfGVufDB8fDB8fHww" alt="Asus Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ASUS</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Asus ExpertBook B1</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star-half-alt text-sm"></i>
+                        <i class="far fa-star text-sm"></i>
+                        <i class="far fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R13,500</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
 
-    </main>
+            <!-- Dell Laptops (12 total) -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFwdG9wfGVufDB8fDB8fHww" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Dell Optiplex 7020" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">DELL</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Dell Optiplex 7020</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R5000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <img src="https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bGFwdG9wfGVufDB8fDB8fHww" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Dell Vostro 3030" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">DELL</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Dell Vostro 3030</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R4500</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1554246247-6993b606e8b9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fERlbGwlMjBMYXB0b3B8ZW58MHx8MHx8fDA%3D" alt="Dell Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">DELL</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Dell G15 Gaming Laptop</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i><i class="fas fa-star text-sm"></i><i class="fas fa-star text-sm"></i><i class="fas fa-star text-sm"></i><i class="far fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R18,500</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <img src="https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bGFwdG9wfGVufDB8fDB8fHww" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Dell Vostro 3030" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">DELL</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Dell Vostro 3030</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R4500</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Dell laptop 5 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <img src="https://images.unsplash.com/photo-1565630916779-e303be97b6f5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Dell Latitude 3450" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">DELL</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Dell Latitude 3450</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R4500</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Dell laptop 6 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <img src="https://images.unsplash.com/photo-1597673030062-0a0f1a801a31?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Dell Vostro 5640" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">DELL</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Dell Vostro 5640</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R3600</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Dell laptop 7 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8RGVsbCUyMExhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" alt="Dell Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">DELL</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Dell Precision 5560</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R30,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Dell laptop 8 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1651176118867-f4ac0b1d6da4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8RGVsbCUyMExhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" alt="Dell Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">DELL</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Dell Inspiron 14 5410</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star-half-alt text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R12,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Dell laptop 9 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8RGVsbCUyMExhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" alt="Dell Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">DELL</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Dell XPS 15</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R25,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Dell laptop 10 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1593642633279-1796119d5482?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8RGVsbCUyMExhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" alt="Dell Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">DELL</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Dell Latitude 7420</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star-half-alt text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R22,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Dell laptop 11 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1567521463850-4939134bcd4a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fERlbGwlMjBMYXB0b3B8ZW58MHx8MHx8fDA%3D" alt="Dell Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">DELL</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Dell Inspiron 13 5310</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star-half-alt text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R13,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Dell laptop 12 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fERlbGwlMjBMYXB0b3B8ZW58MHx8MHx8fDA%3D" alt="Dell Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">DELL</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Dell XPS 17</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R29,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
 
-    <!-- Footer Section -->
+            <!-- Acer Laptops (12 total) -->
+            <!-- Acer Laptop 1 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1693206578613-144dd540b892?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QWNlciUyMExhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" alt="Acer Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ACER</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Acer Swift 5</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R15,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Acer Laptop 2 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1693596936248-8fab255a3de1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8QWNlciUyMExhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" alt="Acer Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ACER</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Acer Predator Helios 300</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i><i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R22,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Acer Laptop 3 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1522198428577-adf2d374b05b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fEFjZXIlMjBMYXB0b3B8ZW58MHx8MHx8fDA%3D" alt="Acer Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ACER</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Acer Predator Helios 300</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R22,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Acer Laptop 4 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8QWNlciUyMExhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" alt="Acer Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ACER</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Acer Predator Helios 300</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R22,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Acer Laptop 5 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1693206578601-21cdc341d2c8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QWNlciUyMExhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" alt="Acer Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ACER</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Acer Predator Helios 300</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R22,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Acer Laptop 6 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1522198734915-76c764a8454d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fEFjZXIlMjBMYXB0b3B8ZW58MHx8MHx8fDA%3D" alt="Acer Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ACER</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Acer Predator Helios 300</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R22,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Acer Laptop 7 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1612688242445-c057ca80e837?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fEFjZXIlMjBMYXB0b3B8ZW58MHx8MHx8fDA%3D" alt="Acer Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ACER</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Acer Predator Helios 300</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R22,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Acer Laptop 8 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1636211990414-8edec17ba047?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fEFjZXIlMjBMYXB0b3B8ZW58MHx8MHx8fDA%3D" alt="Acer Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ACER</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Acer Predator Helios 300</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R22,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Acer Laptop 9 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1636211989567-fd3ada526ea0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fEFjZXIlMjBMYXB0b3B8ZW58MHx8MHx8fDA%3D" alt="Acer Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ACER</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Acer Predator Helios 300</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R22,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Acer Laptop 10 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1637552481610-33c1d7d2e28a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fEFjZXIlMjBMYXB0b3B8ZW58MHx8MHx8fDA%3D" alt="Acer Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ACER</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Acer Predator Helios 300</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R22,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Acer Laptop 11 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1637552481610-154c687c7db9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fEFjZXIlMjBMYXB0b3B8ZW58MHx8MHx8fDA%3D" alt="Acer Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ACER</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Acer Predator Helios 300</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R22,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Acer Laptop 12 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1714578187218-d1828f5ebd6e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fEFjZXIlMjBMYXB0b3B8ZW58MHx8MHx8fDA%3D" alt="Acer Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">ACER</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Acer Predator Helios 300</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R22,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+
+            <!-- Lenovo Laptops (12 total) -->
+            <!-- Lenovo Laptop 1 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <img src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Lenovo Ideacentre AIO i Gen 9" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">LENOVO</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Lenovo Ideacentre AIO i Gen 9</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R4500</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Lenovo Laptop 2 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <img src="https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Lenovo ThinkCentre M90t Gen 5" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">LENOVO</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Lenovo ThinkCentre M90t Gen 5</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R3499</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Lenovo Laptop 3 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Lenovo ThinkCentre M75s Gen 5" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">LENOVO</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Lenovo ThinkCentre M75s Gen 5</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R6000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Lenovo Laptop 4 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Lenovo Ideapad Slim 5" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">LENOVO</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Lenovo Ideapad Slim 5</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R4500</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Lenovo Laptop 5 -->
+           <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <img src="https://images.unsplash.com/photo-1597673030062-0a0f1a801a31?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Lenovo Legion Slim" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">LENOVO</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Lenovo Legion Slim</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R8000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Lenovo Laptop 6 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Product+Image';" alt="Lenovo ThinkBook" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">LENOVO</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Lenovo ThinkBook</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm mr-1"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R4500</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Lenovo Laptop 7 -->
+           <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8TGVub3ZvJTIwTGFwdG9wfGVufDB8fDB8fHww" alt="Lenovo Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">Lenovo</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Lenovo ThinkBook 15</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R12,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Lenovo Laptop 8 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1588620353536-ded12e518f45?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8TGVub3ZvJTIwTGFwdG9wfGVufDB8fDB8fHww" alt="Lenovo Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">Lenovo</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Lenovo ThinkPad X1 Carbon</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R20,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Lenovo Laptop 9 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1713470812508-c276021f1b93?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fExlbm92byUyMExhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" alt="Lenovo Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">Lenovo</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Lenovo Yoga 9i</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star-half-alt text-sm"></i>
+                        <i class="far fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R18,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Lenovo Laptop 10 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1569441508845-c6da9a35924c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fExlbm92byUyMExhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" alt="Lenovo Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">Lenovo</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Lenovo IdeaPad Slim 7</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="far fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R15,500</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Lenovo Laptop 11 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1654119895136-6aad918f412c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fExlbm92byUyMExhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" alt="Lenovo Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">Lenovo</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Lenovo ThinkBook 15</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R12,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <!-- Lenovo Laptop 12 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1660833638050-41f95d8b94e6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fExlbm92byUyMExhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" alt="Lenovo Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">Lenovo</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Lenovo ThinkPad X1 Carbon</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R20,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+
+            <!-- Samsung Laptops (4 total) -->
+            <!-- Samsung Laptop 1 -->
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1522202222206-b75023c48f4f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U2Ftc3VuZyUyMExhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" alt="Samsung Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">Samsung</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Samsung Galaxy Book Pro 360</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star-half-alt text-sm"></i>
+                        <i class="far fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R18,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1662831029660-6c5a89e65ffb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI3fHxTYW1zdW5nJTIwTGFwdG9wfGVufDB8fDB8fHww" alt="Samsung Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">Samsung</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Samsung Galaxy Book Flex</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="far fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R15,500</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1714578187218-d1828f5ebd6e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTM0fHxTYW1zdW5nJTIwTGFwdG9wfGVufDB8fDB8fHww" alt="Samsung Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">Samsung</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Samsung Galaxy Book Flex</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="far fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R15,500</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1717996563514-e3519f9ef9f7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTM5fHxTYW1zdW5nJTIwTGFwdG9wfGVufDB8fDB8fHww" alt="Samsung Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">Samsung</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Samsung Galaxy Book Go</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R12,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1704360302738-3790789f19b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SHVhd2VpJTIwTGFwdG9wfGVufDB8fDB8fHww" alt="Huawei Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">Huawei</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Huawei MateBook X Pro</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star-half-alt text-sm"></i>
+                        <i class="far fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R18,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1754761986430-5d0d44d09d00?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fEh1YXdlaSUyMExhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" alt="Huawei Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">Huawei</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Huawei MateBook 13</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="far fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R15,500</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1592434134753-a70baf7979d5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8SHVhd2VpJTIwTGFwdG9wfGVufDB8fDB8fHww" alt="Huawei Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">Huawei</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Huawei MateBook D15</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R12,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+            <div class="pro bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1727886184119-9dcbc3e0251f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fEh1YXdlaSUyMExhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" alt="Huawei Laptop" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-5">
+                    <span class="text-gray-500 text-sm">Huawei</span>
+                    <h5 class="text-xl font-semibold mt-2 mb-1">Huawei MateBook 14s</h5>
+                    <div class="star flex text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-green-600">R20,000</h4>
+                </div>
+                <a href="#" onclick="addToCart(105)" class="absolute bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 transition-colors duration-300">
+          <i class="fas fa-shopping-cart text-lg"></i>
+        </a>
+            </div>
+       
+</div>
+  </section>
+
+   <!-- Footer Section -->
     <footer class="bg-gray-900 text-gray-300 py-12 px-6 md:px-12 rounded-t-lg">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
             <!-- Company Info -->
             <div class="col-span-1">
                 <h4 class="text-xl font-bold text-white mb-4">Circuit Central</h4>
-                <p class="text-sm"><strong>Address:</strong> 123 Tech Lane, Innovation City, 7700</p>
+                <p class="text-sm"><strong>Address:</strong> 123 Tech Lane, Innovation City,    00</p>
                 <p class="text-sm"><strong>Phone:</strong> +27 21 123 4567</p>
                 <p class="text-sm"><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
                 <div class="social-icons mt-4 flex space-x-4">
@@ -229,8 +1432,8 @@
                 <h4 class="text-xl font-bold text-white mb-4">Install App</h4>
                 <p class="text-sm mb-4">From App Store or Google Play</p>
                 <div class="flex flex-col space-y-3">
-                    <img src="https://placehold.co/150x50/333333/FFFFFF?text=App+Store" alt="App Store" class="rounded-lg shadow-md">
-                    <img src="https://placehold.co/150x50/333333/FFFFFF?text=Google+Play" alt="Google Play" class="rounded-lg shadow-md">
+                    <img src="https://i.pinimg.com/736x/be/78/2e/be782e3668252914e7550183710d1a20.jpg" alt="App Store" class="rounded-lg shadow-md">
+                    <img src="https://i.pinimg.com/1200x/f3/7d/a4/f37da494b60e3b7ed6e3e08a1ddba2fa.jpg" alt="Google Play" class="rounded-lg shadow-md">
                 </div>
                 <p class="text-sm mt-4">Secured Payment Gateways</p>
                 <img src="https://placehold.co/200x50/333333/FFFFFF?text=Payment+Options" alt="Payment Options" class="mt-2 rounded-lg shadow-md">
@@ -240,15 +1443,101 @@
             <p>&copy; 2025 Circuit Central. All rights reserved.</p>
         </div>
     </footer>
-    
-    <script>
-        // JavaScript for mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
+
+    </main>
+<script>
+// Mock data for the products displayed on this shop page.
+// The IDs and details must match what is used to call addToCart().
+const MOCK_PRODUCTS = [
+ // Updated to match the shop.html cards
+ { id: 101, name: 'HP Spectre x360', price: 18000.00, image: 'https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fERlbGwlMjBMYXB0b3B8ZW58MHx8MHx8fDA%3D' },
+ { id: 102, name: 'HP Envy 13', price: 15500.00, image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fEhQJTIwTGFwdG9wfGVufDB8fDB8fHww' },
+ { id: 103, name: 'HP Elite SFF 600', price: 5000.00, image: 'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D' },
+ { id: 104, name: 'HP EliteBook 840', price: 20000.00, image: 'https://images.unsplash.com/photo-1588405765997-02255aff295a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fEhQJTIwTGFwdG9wfGVufDB8fDB8fHww' },
+ { id: 105, name: 'HP Omen 16', price: 25000.00, image: 'https://images.unsplash.com/photo-1618410316609-107c7f6d3756?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fEhQJTIwTGFwdG9wfGVufDB8fDB8fHww' }
+];
+
+// ----------------------
+// Cart Management Functions
+// ----------------------
+
+// Function to get the cart from localStorage
+function getCart() {
+ const cart = localStorage.getItem('cart');
+ return cart ? JSON.parse(cart) : [];
+}
+
+// Function to save the cart to localStorage
+function saveCart(cart) {
+ localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Function to update the cart icon with the item count
+function updateCartIcon() {
+ const cart = getCart();
+ const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+ // Select the cart icon in the desktop navigation
+ const desktopCartLink = document.querySelector('#navbar a[href="cart.html"]');
+ 
+ if (desktopCartLink) {
+  const cartIcon = desktopCartLink.querySelector('.fa-shopping-cart');
+  let badge = desktopCartLink.querySelector('.cart-badge');
+
+  if (totalItems > 0) {
+   if (!badge) {
+    badge = document.createElement('span');
+    badge.className = 'cart-badge absolute -top-2 -right-2 text-xs text-white bg-red-500 rounded-full h-4 w-4 flex items-center justify-center';
+    desktopCartLink.style.position = 'relative'; // Ensure the link is relative for absolute badge
+    desktopCartLink.appendChild(badge);
+   }
+   badge.textContent = totalItems;
+   badge.style.display = 'flex';
+  } else {
+   if (badge) {
+    badge.remove(); // Use remove() to clear the element when cart is empty
+   }
+  }
+ }
+}
+
+// Function to add an item to the cart
+function addToCart(productId) {
+ // Find the product in the shop's local mock data
+ const product = MOCK_PRODUCTS.find(p => p.id === productId);
+ if (!product) {
+  console.error(`Product with ID ${productId} not found in MOCK_PRODUCTS.`);
+  return;
+ }
+
+ const cart = getCart();
+ const existingItem = cart.find(item => item.id === productId);
+
+ if (existingItem) {
+  existingItem.quantity += 1;
+ } else {
+  // Ensure to copy all necessary product details
+  cart.push({ id: product.id, name: product.name, price: product.price, image: product.image, quantity: 1 });
+ }
+
+ saveCart(cart);
+ alert(`${product.name} has been added to your cart!`);
+ updateCartIcon();
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+ // Add functionality for mobile menu toggle
+ const mobileMenuButton = document.getElementById('mobile-menu-button');
+ const mobileMenu = document.getElementById('mobile-menu');
+ if (mobileMenuButton && mobileMenu) {
+  mobileMenuButton.addEventListener('click', () => {
+   mobileMenu.classList.toggle('hidden');
+  });
+ }
+ // Update the cart icon on page load
+ updateCartIcon();
+});
+</script>
 </body>
 </html>

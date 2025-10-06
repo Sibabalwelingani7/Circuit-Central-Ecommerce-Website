@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Circuit Central — Improvements Plan</title>
+  <style>
+    :root{
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --muted:#64748b;
+      --accent:#0ea5a4;
+      --accent-2:#0891b2;
+      --glass: rgba(255,255,255,0.6);
+      --radius:14px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    * {
+      box-sizing:border-box
+    }
+    body{
+      margin:0;
+      background: linear-gradient(180deg,#eef2f7 0%, var(--bg) 100%);
+      color:#0f172a;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:32px;
+    }
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:22px;
+    }
+    .brand{
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+    .logo{
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:grid;
+      place-items:center;
+      color:white;
+      font-weight:700;
+      font-size:20px;
+      box-shadow: 0 6px 18px rgba(3,7,18,0.08);
+    }
+    h1{font-size:20px;margin:0}
+    p.lead{margin:0;color:var(--muted);font-size:14px}
+
+    main{
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:20px;
+      align-items:start;
+    }
+
+    /* Left column */
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow: 0 6px 20px rgba(2,6,23,0.06);
+    }
+
+    .section + .section{margin-top:16px}
+
+    .features{
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+      gap:12px;
+      margin-top:12px;
+    }
+    .feature{
+      padding:14px;
+      border-radius:12px;
+      background:linear-gradient(180deg, rgba(14,165,164,0.06), rgba(8,145,178,0.03));
+      min-height:90px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:8px;
+    }
+    .feature h3{margin:0;font-size:15px}
+    .feature p{margin:0;color:var(--muted);font-size:13px}
+
+    .list{
+      margin:0;
+      padding-left:18px;
+    }
+    .list li{margin:8px 0;color:var(--muted)}
+
+    /* Right column / Sidebar */
+    aside .card{position:sticky; top:32px}
+    .admin-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .btn{
+      border:0;padding:10px 12px;border-radius:10px;font-weight:600;
+      cursor:pointer;background:var(--accent);color:white;
+      box-shadow: 0 6px 18px rgba(14,165,164,0.12);
+      font-size:13px;
+    }
+    .btn.ghost{
+      background:transparent;color:var(--accent);border:1px solid rgba(14,165,164,0.12);
+      box-shadow:none;font-weight:600;
+    }
+
+    .table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:8px;
+    }
+    .table th, .table td{
+      text-align:left;padding:8px 6px;font-size:13px;color:var(--muted);
+      border-bottom:1px solid rgba(8,9,10,0.04);
+    }
+    .badge{
+      display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(8,145,178,0.12);color:var(--accent-2);font-weight:700;font-size:12px;
+    }
+
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media (max-width:960px){
+      main{grid-template-columns:1fr; padding-bottom:40px}
+      aside .card{position:static}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">CC</div>
+        <div>
+          <h1>Circuit Central — Improvements Plan</h1>
+          <p class="lead">Clean, prioritized feature list and admin notes for the e-commerce rebuild</p>
+        </div>
+      </div>
+      <div>
+        <span class="badge">Project Plan</span>
+      </div>
+    </header>
+
+    <main>
+      <!-- Left / Primary content -->
+      <section>
+        <div class="card">
+          <h2 style="margin-top:0;margin-bottom:8px">Main Pages & Features</h2>
+
+          <div class="section">
+            <h3 style="margin-bottom:6px">1. Shop Page (Product Listing)</h3>
+            <p class="lead" style="margin-bottom:8px;color:var(--muted)">Product discovery with filters, search and clear product data.</p>
+            <ul class="list">
+              <li>Display product images, name, short &amp; long descriptions, price and stock status.</li>
+              <li>Categories &amp; filters: brand, price range, type (e.g., laptops, desktops, accessories).</li>
+              <li>Search bar for quick lookups and keyword matching.</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h3 style="margin-bottom:6px">2. Promos Page</h3>
+            <p class="lead" style="margin-bottom:8px;color:var(--muted)">Highlight current offers.</p>
+            <ul class="list">
+              <li>List active discounts, coupons and bundle deals.</li>
+              <li>Automatic expiry handling and promo codes at checkout.</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h3 style="margin-bottom:6px">3. My Account (User Accounts)</h3>
+            <p class="lead" style="margin-bottom:8px;color:var(--muted)">User management & order history.</p>
+            <ul class="list">
+              <li>Signup/login (email, social optional), profile, saved addresses and payment methods.</li>
+              <li>Order history, order tracking, saved items / wishlists.</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h3 style="margin-bottom:6px">4. Shopping Cart</h3>
+            <p class="lead" style="margin-bottom:8px;color:var(--muted)">Review & adjust before buying.</p>
+            <ul class="list">
+              <li>Add/remove items, adjust quantities and view subtotal, tax and shipping estimates.</li>
+              <li>Persist cart for logged-in users across devices.</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h3 style="margin-bottom:6px">5. Trade-in Page</h3>
+            <p class="lead" style="margin-bottom:8px;color:var(--muted)">Device trade-ins for credit.</p>
+            <ul class="list">
+              <li>Form for customers to submit device details and get an estimated trade-in value.</li>
+              <li>Option to accept store credit or discount on purchase.</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h3 style="margin-bottom:6px">6. Checkout System</h3>
+            <p class="lead" style="margin-bottom:8px;color:var(--muted)">Complete purchases securely.</p>
+            <ul class="list">
+              <li>Collect shipping details, choose shipping method, apply coupons and select payment.</li>
+              <li>Order confirmation page and email receipt.</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h3 style="margin-bottom:6px">7. Payment Integration</h3>
+            <p class="lead" style="margin-bottom:8px;color:var(--muted)">Support multiple secure payment methods.</p>
+            <ul class="list">
+              <li>Credit/Debit cards, PayPal, Bank Transfer, Mobile Money (where applicable).</li>
+              <li>PCI-compliant payment flow or use trusted gateway (Stripe, PayGate, etc.).</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h3 style="margin-bottom:6px">8. Order Management (Admin)</h3>
+            <p class="lead" style="margin-bottom:8px;color:var(--muted)">Admin tools for orders & fulfillment.</p>
+            <ul class="list">
+              <li>View & process orders, update fulfillment status, manage returns and refunds.</li>
+              <li>Inventory adjustments after sales or trade-ins.</li>
+            </ul>
+          </div>
+
+          <div class="section" style="margin-top:14px">
+            <h3 style="margin-bottom:6px">Extra Ideas</h3>
+            <ul class="list">
+              <li>Newsletter &amp; marketing emails for promos.</li>
+              <li>Customer support center / FAQ and chat integration.</li>
+              <li>Product recommendations, analytics dashboard and sales reports.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Feature Cards -->
+        <div style="margin-top:14px" class="card">
+          <h2 style="margin:0 0 10px 0">Quick Feature Snapshot</h2>
+          <div class="features">
+            <div class="feature">
+              <div>
+                <h3>Product Listing</h3>
+                <p>Images, variants, stock and filters</p>
+              </div>
+              <small style="color:var(--muted)">Essential for discovery</small>
+            </div>
+
+            <div class="feature">
+              <div>
+                <h3>Secure Payments</h3>
+                <p>Multiple gateways & PCI-aware flow</p>
+              </div>
+              <small style="color:var(--muted)">Critical for conversion</small>
+            </div>
+
+            <div class="feature">
+              <div>
+                <h3>Trade-in Program</h3>
+                <p>Device valuation & credit issuance</p>
+              </div>
+              <small style="color:var(--muted)">Drives repeat purchases</small>
+            </div>
+
+            <div class="feature">
+              <div>
+                <h3>Admin Dashboard</h3>
+                <p>Product, orders & promotions management</p>
+              </div>
+              <small style="color:var(--muted)">Operational control</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right / Sidebar -->
+      <aside>
+        <div class="card">
+          <h3 style="margin-top:0">Admin Dashboard — Notes</h3>
+          <p style="color:var(--muted);margin-top:6px">Suggested admin features for launch.</p>
+
+          <div style="margin-top:10px">
+            <strong>Admin capabilities</strong>
+            <ul class="list" style="margin-top:8px">
+              <li>Manage products: create, edit, archive.</li>
+              <li>Approve trade-ins & issue credits.</li>
+              <li>Process orders and print packing slips.</li>
+              <li>Manage promotions and coupon codes.</li>
+            </ul>
+          </div>
+
+          <div class="admin-actions" aria-hidden="true">
+            <button class="btn">Add Product</button>
+            <button class="btn ghost">View Orders</button>
+            <button class="btn ghost">Analytics</button>
+          </div>
+
+          <table class="table" aria-hidden="true">
+            <thead>
+              <tr><th>Module</th><th>Priority</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Shop & Search</td><td>High</td></tr>
+              <tr><td>Checkout & Payments</td><td>High</td></tr>
+              <tr><td>Trade-in Flow</td><td>Medium</td></tr>
+              <tr><td>Admin Dashboard</td><td>High</td></tr>
+              <tr><td>Promos & Newsletter</td><td>Medium</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h3 style="margin:0 0 8px 0">Development Checklist</h3>
+          <ol style="margin:0;padding-left:18px;color:var(--muted)">
+            <li>Define DB schema (products, users, orders, trade_ins).</li>
+            <li>Implement secure auth & sessions.</li>
+            <li>Integrate payment gateway & webhook handlers.</li>
+            <li>Build admin UI for order/product management.</li>
+            <li>QA: cross-device checkout, coupon, and trade-in flows.</li>
+          </ol>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <small>Need this exported as PDF, or converted to a Trello/Asana task list? Ask and I'll prepare it.</small>
+    </footer>
+  </div>
+</body>
+</html>
